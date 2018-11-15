@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='ament_flake8',
-    version='0.6.0',
+    version='0.6.1',
     packages=find_packages(exclude=['test']),
     install_requires=['setuptools'],
     package_data={'': [
@@ -12,8 +12,8 @@ setup(
     zip_safe=False,
     author='D. Hood',
     author_email='dhood@osrfoundation.org',
-    maintainer='D. Hood',
-    maintainer_email='dhood@osrfoundation.org',
+    maintainer='Steven! Ragnarök',
+    maintainer_email='steven@osrfoundation.org',
     url='https://github.com/ament/ament_lint',
     download_url='https://github.com/ament/ament_lint/releases',
     keywords=['ROS'],
