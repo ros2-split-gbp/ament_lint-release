@@ -1,1 +1,1 @@
-{"trim": "", "base": "ab8dfec", "trimbase": "", "parent": "debian/crystal/ament_clang_format", "previous": "94cc718"}
+{"parent": "debian/crystal/ament_clang_format", "previous": "ac5d2f6", "trimbase": "", "trim": "", "base": "cdd45ba"}
