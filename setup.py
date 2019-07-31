@@ -3,9 +3,9 @@ from setuptools import setup
 
 setup(
     name='ament_clang_format',
-    version='0.7.1',
+    version='0.7.4',
     packages=find_packages(exclude=['test']),
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'pyyaml'],
     package_data={'': [
         'configuration/.clang-format',
     ]},
