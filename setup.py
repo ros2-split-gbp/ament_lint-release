@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='ament_pep257',
-    version='0.7.1',
+    version='0.7.4',
     packages=find_packages(exclude=['test']),
     install_requires=['setuptools'],
     package_data={'': [
@@ -32,6 +32,9 @@ and generate xUnit test result files.""",
     entry_points={
         'console_scripts': [
             'ament_pep257 = ament_pep257.main:main',
+        ],
+        'pytest11': [
+            'ament_pep257 = ament_pep257.pytest_marker',
         ],
     },
 )
