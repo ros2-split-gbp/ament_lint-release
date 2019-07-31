@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>ament_lint_common</name>
-  <version>0.7.3</version>
+  <version>0.7.4</version>
   <description>The list of commonly used linters in the ament buildsytem in CMake.</description>
   <maintainer email="dthomas@osrfoundation.org">Dirk Thomas</maintainer>
   <license>Apache License 2.0</license>
@@ -13,6 +13,7 @@
   <buildtool_export_depend>ament_cmake_core</buildtool_export_depend>
 
   <!--<exec_depend>ament_clang_format</exec_depend>-->
+  <!--<exec_depend>ament_clang_tidy</exec_depend>-->
   <exec_depend>ament_cmake_copyright</exec_depend>
   <exec_depend>ament_cmake_cppcheck</exec_depend>
   <exec_depend>ament_cmake_cpplint</exec_depend>
