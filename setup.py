@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='ament_flake8',
-    version='0.7.1',
+    version='0.7.4',
     packages=find_packages(exclude=['test']),
     install_requires=['setuptools'],
     package_data={'': [
@@ -31,6 +31,9 @@ The ability to check code for syntax and style conventions with flake8.""",
     entry_points={
         'console_scripts': [
             'ament_flake8 = ament_flake8.main:main',
+        ],
+        'pytest11': [
+            'ament_flake8 = ament_flake8.pytest_marker',
         ],
     },
 )
