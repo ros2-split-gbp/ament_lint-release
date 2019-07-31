@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='ament_xmllint',
-    version='0.7.1',
+    version='0.7.4',
     packages=find_packages(exclude=['test']),
     install_requires=['setuptools'],
     zip_safe=True,
@@ -29,6 +29,9 @@ and generate xUnit test result files.""",
     entry_points={
         'console_scripts': [
             'ament_xmllint = ament_xmllint.main:main',
+        ],
+        'pytest11': [
+            'ament_xmllint = ament_xmllint.pytest_marker',
         ],
     },
 )
