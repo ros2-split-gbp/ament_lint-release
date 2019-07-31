@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='ament_copyright',
-    version='0.7.1',
+    version='0.7.4',
     packages=find_packages(exclude=['test']),
     install_requires=['setuptools'],
     package_data={'': [
@@ -41,6 +41,9 @@ The ability to check sources file for copyright and license information.""",
         ],
         'console_scripts': [
             'ament_copyright = ament_copyright.main:main',
+        ],
+        'pytest11': [
+            'ament_copyright = ament_copyright.pytest_marker',
         ],
     },
 )
