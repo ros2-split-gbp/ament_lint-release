@@ -218,7 +218,9 @@ def main(argv=sys.argv[1:]):
 
 def add_missing_header(file_descriptors, name, license_, verbose):
     copyright_ = 'Copyright %d %s' % (int(time.strftime('%Y')) - 1 + 1, name)
-    header = license_.file_header.format(**{'copyright': copyright_})
+    header = license_.file_header.format(**{
+        'copyright': copyright_,
+        'copyright_holder': name})
     lines = header.splitlines()
 
     if verbose:
@@ -422,6 +424,7 @@ def get_xunit_content(report, testname, elapsed):
 <testsuite
   name="%(testname)s"
   tests="%(test_count)d"
+  errors="0"
   failures="%(error_count)d"
   time="%(time)s"
 >
@@ -448,8 +451,7 @@ def get_xunit_content(report, testname, elapsed):
             # if there is a known copyright / license report a single successful test
             xml += """  <testcase
     name=%(quoted_filename)s
-    classname="%(testname)s"
-    status="%(escaped_message)s"/>
+    classname="%(testname)s"/>
 """ % data
 
     # output list of checked files

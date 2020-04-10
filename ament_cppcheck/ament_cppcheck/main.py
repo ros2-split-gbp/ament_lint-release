@@ -134,7 +134,8 @@ def main(argv=sys.argv[1:]):
            '-q',
            '-rp',
            '--xml',
-           '--xml-version=2']
+           '--xml-version=2',
+           '--suppress=internalAstError']
     if args.language:
         cmd.extend(['--language={0}'.format(args.language)])
     for include_dir in (args.include_dirs or []):
@@ -158,7 +159,8 @@ def main(argv=sys.argv[1:]):
         return 1
 
     # output errors
-    report = {}
+    report = defaultdict(list)
+    # even though we use a defaultdict, explicity add known files so they are listed
     for filename in files:
         report[filename] = []
     for error in root.find('errors'):
@@ -244,9 +246,10 @@ def get_xunit_content(report, testname, elapsed, skip=None):
 <testsuite
   name="%(testname)s"
   tests="%(test_count)d"
+  errors="0"
   failures="%(error_count)d"
   time="%(time)s"
-  skip="%(skip)d"
+  skipped="%(skip)d"
 >
 """ % data
 
@@ -263,7 +266,6 @@ def get_xunit_content(report, testname, elapsed, skip=None):
             xml += """  <testcase
     name=%(quoted_name)s
     classname="%(testname)s"
-    status="notrun"
   >
     <skipped type="skip" message=%(quoted_message)s>
       ![CDATA[Test Skipped due to %(skip)s]]
@@ -297,8 +299,7 @@ def get_xunit_content(report, testname, elapsed, skip=None):
             }
             xml += """  <testcase
     name=%(quoted_location)s
-    classname="%(testname)s"
-    status="No problems found"/>
+    classname="%(testname)s"/>
 """ % data
 
     # output list of checked files

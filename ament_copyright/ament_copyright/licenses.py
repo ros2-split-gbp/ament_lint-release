@@ -38,7 +38,9 @@ def read_license_data(path, name, prefix):
 
 
 apache2 = read_license_data(TEMPLATE_DIRECTORY, 'Apache License, Version 2.0', 'apache2')
+boost1 = read_license_data(TEMPLATE_DIRECTORY, 'Boost Software License - Version 1.0', 'boost1')
 bsd2 = read_license_data(TEMPLATE_DIRECTORY, 'BSD License 2.0', 'bsd2')
+bsd_3clause = read_license_data(TEMPLATE_DIRECTORY, '3-Clause BSD License', 'bsd_3clause')
 mit = read_license_data(TEMPLATE_DIRECTORY, 'MIT License', 'mit')
 gplv3 = read_license_data(TEMPLATE_DIRECTORY, 'GNU General Public License 3.0', 'gplv3')
 lgplv3 = read_license_data(TEMPLATE_DIRECTORY, 'GNU Lesser General Public License 3.0', 'lgplv3')
