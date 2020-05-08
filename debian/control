@@ -1,0 +1,12 @@
+Source: ros-foxy-ament-mypy
+Section: misc
+Priority: optional
+Maintainer: Ted Kern <ted.kern@canonical.com>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest, python3-pytest-mock, ros-foxy-ament-flake8, ros-foxy-ros-workspace, python3-all, python3-setuptools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-foxy-ament-mypy
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, python3-mypy, ros-foxy-ros-workspace
+Description: Support for mypy static type checking in ament.
