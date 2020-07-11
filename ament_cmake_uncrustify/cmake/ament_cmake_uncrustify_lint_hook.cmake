@@ -24,12 +24,5 @@ file(GLOB_RECURSE _source_files FOLLOW_SYMLINKS
 )
 if(_source_files)
   message(STATUS "Added test 'uncrustify' to check C / C++ code style")
-
-  set(_args "")
-  if(DEFINED ament_cmake_uncrustify_ADDITIONAL_ARGS)
-    list(APPEND _args ${ament_cmake_uncrustify_ADDITIONAL_ARGS})
-  endif()
-
-  message(STATUS "Configured uncrustify additional arguments: ${_args}")
-  ament_uncrustify(${_args})
+  ament_uncrustify()
 endif()

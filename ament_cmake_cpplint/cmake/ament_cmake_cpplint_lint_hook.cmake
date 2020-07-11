@@ -24,13 +24,5 @@ file(GLOB_RECURSE _source_files FOLLOW_SYMLINKS
 )
 if(_source_files)
   message(STATUS "Added test 'cpplint' to check C / C++ code against the Google style")
-
-  # Get exclude paths for added targets
-  set(_all_exclude "")
-  if(DEFINED ament_cmake_cpplint_ADDITIONAL_EXCLUDE)
-    list(APPEND _all_exclude ${ament_cmake_cpplint_ADDITIONAL_EXCLUDE})
-  endif()
-
-  message(STATUS "Configured cpplint exclude dirs and/or files: ${_all_exclude}")
-  ament_cpplint(EXCLUDE ${_all_exclude})
+  ament_cpplint()
 endif()
