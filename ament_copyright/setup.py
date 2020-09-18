@@ -5,7 +5,7 @@ package_name = 'ament_copyright'
 
 setup(
     name=package_name,
-    version='0.9.4',
+    version='0.10.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
@@ -44,6 +44,7 @@ The ability to check sources file for copyright and license information.""",
             'boost1 = ament_copyright.licenses:boost1',
             'bsd2 = ament_copyright.licenses:bsd2',
             'bsd_3clause = ament_copyright.licenses:bsd_3clause',
+            'bsd_2clause = ament_copyright.licenses:bsd_2clause',
             'mit = ament_copyright.licenses:mit',
             'gplv3 = ament_copyright.licenses:gplv3',
             'lgplv3 = ament_copyright.licenses:lgplv3',
