@@ -53,6 +53,7 @@ function(ament_cppcheck)
     list(APPEND cmd "--include_dirs" "${ARG_INCLUDE_DIRS}")
   endif()
   if(ARG_LANGUAGE)
+    string(TOLOWER ${ARG_LANGUAGE} ARG_LANGUAGE)
     list(APPEND cmd "--language" "${ARG_LANGUAGE}")
   endif()
 
@@ -60,7 +61,7 @@ function(ament_cppcheck)
   ament_add_test(
     "${ARG_TESTNAME}"
     COMMAND ${cmd}
-    TIMEOUT 180
+    TIMEOUT 300
     OUTPUT_FILE "${CMAKE_BINARY_DIR}/ament_cppcheck/${ARG_TESTNAME}.txt"
     RESULT_FILE "${result_file}"
     WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
