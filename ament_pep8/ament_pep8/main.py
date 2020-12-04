@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright 2014-2015, 2020 Open Source Robotics Foundation, Inc.
+# Copyright 2014-2015 Open Source Robotics Foundation, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,12 +20,12 @@ import sys
 from xml.sax.saxutils import escape
 from xml.sax.saxutils import quoteattr
 
-import pycodestyle
+import pep8
 
 
 def main(argv=sys.argv[1:]):
     config_file = os.path.join(
-        os.path.dirname(__file__), 'configuration', 'ament_pycodestyle.ini')
+        os.path.dirname(__file__), 'configuration', 'ament_pep8.ini')
 
     parser = argparse.ArgumentParser(
         description='Check code against the style conventions in PEP 8.',
@@ -62,7 +62,7 @@ def main(argv=sys.argv[1:]):
         print("Could not config file '%s'" % args.config_file, file=sys.stderr)
         return 1
 
-    report = generate_pycodestyle_report(
+    report = generate_pep8_report(
         args.config_file, args.paths, args.excludes,
         max_line_length=args.linelength)
 
@@ -104,7 +104,7 @@ def main(argv=sys.argv[1:]):
     return rc
 
 
-def generate_pycodestyle_report(config_file, paths, excludes, max_line_length=None):
+def generate_pep8_report(config_file, paths, excludes, max_line_length=None):
     kwargs = {
         'repeat': True,
         'show_source': True,
@@ -114,10 +114,10 @@ def generate_pycodestyle_report(config_file, paths, excludes, max_line_length=No
     }
     if max_line_length is not None:
         kwargs['max_line_length'] = max_line_length
-    pycodestyle_guide = CustomStyleGuide(**kwargs)
+    pep8style = CustomStyleGuide(**kwargs)
     if excludes:
-        pycodestyle_guide.options.exclude += excludes
-    return pycodestyle_guide.check_files(paths)
+        pep8style.options.exclude += excludes
+    return pep8style.check_files(paths)
 
 
 def get_xunit_content(report, testname):
@@ -138,7 +138,7 @@ def get_xunit_content(report, testname):
 """ % data
 
     if report.errors:
-        # report each pycodestyle error/warning as a failing testcase
+        # report each pep8 error/warning as a failing testcase
         for error in report.errors:
             data = {
                 'quoted_name': quoteattr(
@@ -157,12 +157,12 @@ def get_xunit_content(report, testname):
 """ % data
 
     else:
-        # if there are no pycodestyle errors/warnings report a single successful test
+        # if there are no pep8 errors/warnings report a single successful test
         data = {
             'testname': testname,
         }
         xml += """  <testcase
-    name="pycodestyle"
+    name="pep8"
     classname="%(testname)s"/>
 """ % data
 
@@ -177,14 +177,14 @@ def get_xunit_content(report, testname):
     return xml
 
 
-class CustomStyleGuide(pycodestyle.StyleGuide):
+class CustomStyleGuide(pep8.StyleGuide):
 
     def input_file(self, filename, **kwargs):
         self.options.reporter.files.append(filename)
         return super(CustomStyleGuide, self).input_file(filename, **kwargs)
 
 
-class CustomReport(pycodestyle.StandardReport):
+class CustomReport(pep8.StandardReport):
 
     errors = []
     files = []

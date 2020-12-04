@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ament_flake8.main import main_with_errors
+from ament_flake8.main import main
 import pytest
 
 
@@ -20,7 +20,5 @@ import pytest
 @pytest.mark.linter
 def test_flake8():
     excluded = ['ament_cpplint/cpplint.py']
-    rc, errors = main_with_errors(argv=['--exclude'] + excluded)
-    assert rc == 0, \
-        'Found %d code style errors / warnings:\n' % len(errors) + \
-        '\n'.join(errors)
+    rc = main(argv=['--exclude'] + excluded)
+    assert rc == 0, 'Found code style errors / warnings'
