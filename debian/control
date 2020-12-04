@@ -1,0 +1,12 @@
+Source: ros-eloquent-ament-lint
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-eloquent-ros-workspace, python3-all, python3-setuptools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-ament-lint
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-eloquent-ros-workspace
+Description: Providing common API for ament linter packages.
