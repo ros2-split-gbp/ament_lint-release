@@ -1,0 +1,12 @@
+Source: ros-eloquent-ament-uncrustify
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-eloquent-ros-workspace, python3-all, python3-setuptools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-ament-uncrustify
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-eloquent-uncrustify-vendor, ros-eloquent-ros-workspace
+Description: The ability to check code against style conventions using uncrustify and generate xUnit test result files.
