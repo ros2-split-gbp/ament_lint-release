@@ -1,0 +1,12 @@
+Source: ros-eloquent-ament-lint-common
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-eloquent-ament-cmake-core, ros-eloquent-ament-cmake-export-dependencies, ros-eloquent-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-ament-lint-common
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-eloquent-ament-cmake-copyright, ros-eloquent-ament-cmake-core, ros-eloquent-ament-cmake-cppcheck, ros-eloquent-ament-cmake-cpplint, ros-eloquent-ament-cmake-flake8, ros-eloquent-ament-cmake-lint-cmake, ros-eloquent-ament-cmake-pep257, ros-eloquent-ament-cmake-uncrustify, ros-eloquent-ament-cmake-xmllint, ros-eloquent-ros-workspace
+Description: The list of commonly used linters in the ament buildsytem in CMake.
