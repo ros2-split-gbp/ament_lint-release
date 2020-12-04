@@ -1,0 +1,12 @@
+Source: ros-eloquent-ament-cmake-pep8
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-eloquent-ament-cmake-copyright, ros-eloquent-ament-cmake-core, ros-eloquent-ament-cmake-lint-cmake, ros-eloquent-ament-cmake-test, ros-eloquent-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-ament-cmake-pep8
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-eloquent-ament-cmake-test, ros-eloquent-ament-pep8, ros-eloquent-ros-workspace
+Description: The CMake API for ament_pep8 to check code against the style conventions in PEP 8.
