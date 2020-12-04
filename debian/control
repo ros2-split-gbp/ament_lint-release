@@ -1,0 +1,12 @@
+Source: ros-eloquent-ament-lint-auto
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-eloquent-ament-cmake-core, ros-eloquent-ament-cmake-test, ros-eloquent-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-ament-lint-auto
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-eloquent-ament-cmake-core (>= 0.7.1), ros-eloquent-ament-cmake-test, ros-eloquent-ros-workspace
+Description: The auto-magic functions for ease to use of the ament linters in CMake.
