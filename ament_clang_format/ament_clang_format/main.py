@@ -170,9 +170,9 @@ def main(argv=sys.argv[1:]):
 
                 # format deletion / addition as unified diff
                 data['deletion'] = '\n'.join(
-                    ['- ' + l for l in data['deletion'].split('\n')])
+                    ['- ' + line for line in data['deletion'].split('\n')])
                 data['addition'] = '\n'.join(
-                    ['+ ' + l for l in data['addition'].split('\n')])
+                    ['+ ' + line for line in data['addition'].split('\n')])
 
                 report[filename].append(data)
 
@@ -253,7 +253,7 @@ def get_files(paths, extensions):
     for path in paths:
         if os.path.isdir(path):
             for dirpath, dirnames, filenames in os.walk(path):
-                if 'AMENT_IGNORE' in filenames:
+                if 'AMENT_IGNORE' in dirnames + filenames:
                     dirnames[:] = []
                     continue
                 # ignore folder starting with . or _
