@@ -211,7 +211,6 @@ tracks:
       :{release_inc} --os-name fedora
     - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
       :{release_inc} --os-name rhel
-      --skip-keys clang-tidy pydocstyle python3-flake8 python3-mypy python3-pytest-mock
     devel_branch: master
     last_version: 0.10.0
     name: ament_lint
