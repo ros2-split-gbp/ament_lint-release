@@ -213,7 +213,7 @@ tracks:
       :{release_inc} --os-name rhel --skip-keys clang-tidy pydocstyle python3-flake8
       python3-mypy python3-pytest-mock
     devel_branch: master
-    last_version: 0.10.1
+    last_version: 0.10.2
     name: ament_lint
     patches: null
     release_inc: '1'
