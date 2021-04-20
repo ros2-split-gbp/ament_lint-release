@@ -1,1 +1,1 @@
-{"base": "2ddf1911c", "parent": "debian/rolling/ament_lint", "previous": "19f73e5e0", "trim": "", "trimbase": ""}
+{"base": "0bd8d0eda", "parent": "debian/galactic/ament_lint", "previous": "442200e42", "trim": "", "trimbase": ""}
