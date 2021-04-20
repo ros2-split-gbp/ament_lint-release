@@ -1,1 +1,1 @@
-{"base": "27526c26b", "parent": "debian/rolling/ament_pycodestyle", "previous": "7b74f0a60", "trim": "", "trimbase": ""}
+{"base": "3b08405af", "parent": "debian/galactic/ament_pycodestyle", "previous": "6d0c2a39d", "trim": "", "trimbase": ""}
