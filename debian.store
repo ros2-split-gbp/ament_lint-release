@@ -1,1 +1,1 @@
-{"base": "1fedce917", "parent": "debian/rolling/ament_cppcheck", "previous": "56404f6a7", "trim": "", "trimbase": ""}
+{"base": "deeef34e9", "parent": "debian/galactic/ament_cppcheck", "previous": "ec9ad1c4e", "trim": "", "trimbase": ""}
