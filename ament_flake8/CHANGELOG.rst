@@ -2,6 +2,12 @@
 Changelog for package ament_flake8
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.11.2 (2021-06-18)
+-------------------
+
+0.11.1 (2021-06-18)
+-------------------
+
 0.11.0 (2021-06-18)
 -------------------
 * Ignore flake8-blind-except B902 (`#292 <https://github.com/ament/ament_lint/issues/292>`_)
