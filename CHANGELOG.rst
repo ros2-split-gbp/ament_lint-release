@@ -2,6 +2,9 @@
 Changelog for package ament_cpplint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.12.0 (2022-02-18)
+-------------------
+
 0.11.4 (2022-01-14)
 -------------------
 * Update forthcoming version in changelogs
