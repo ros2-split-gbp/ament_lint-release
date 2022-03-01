@@ -2,6 +2,9 @@
 Changelog for package ament_cppcheck
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.12.1 (2022-03-01)
+-------------------
+
 0.12.0 (2022-02-18)
 -------------------
 * Disable cppcheck 2.x. (`#345 <https://github.com/ament/ament_lint/issues/345>`_)
