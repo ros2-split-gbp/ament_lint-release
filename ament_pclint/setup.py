@@ -5,7 +5,7 @@ package_name = 'ament_pclint'
 
 setup(
     name=package_name,
-    version='0.12.1',
+    version='0.12.2',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
@@ -48,9 +48,9 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development',
     ],
-    description='Static code analysis on C/C++ code using PCLint.',
+    description='Static code analysis on C/C++ code using PC-lint.',
     long_description="""\
-The ability to perform static code analysis on C/C++ code using PCLint
+The ability to perform static code analysis on C/C++ code using PC-lint
 and generate xUnit test result files.""",
     license='Apache License, Version 2.0',
     tests_require=['pytest'],
