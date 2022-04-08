@@ -2,6 +2,9 @@
 Changelog for package ament_cmake_pycodestyle
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.12.3 (2022-04-08)
+-------------------
+
 0.12.2 (2022-03-28)
 -------------------
 * Improve documentation by clarifying the purpose of different tools (`#357 <https://github.com/ament/ament_lint/issues/357>`_)
