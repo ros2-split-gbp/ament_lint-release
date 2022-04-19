@@ -1,1 +1,1 @@
-{"base": "052ce6645", "parent": "debian/rolling/ament_pep257", "previous": "7e2f0f6de", "trim": "", "trimbase": ""}
+{"base": "de230a752", "parent": "debian/humble/ament_pep257", "previous": "e298f2c1c", "trim": "", "trimbase": ""}
