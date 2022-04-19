@@ -1,0 +1,329 @@
+ros-humble-ament-flake8 (0.12.3-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 Apr 2022 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.12.2-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 28 Mar 2022 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.12.1-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 01 Mar 2022 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.12.0-2jammy) jammy; urgency=high
+
+  * Remove use of distutils.version.LooseVersion. (#346 <https://github.com/ament/ament_lint/issues/346>)
+  * Contributors: Chris Lalancette
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Feb 2022 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.11.4-2jammy) jammy; urgency=high
+
+  * Update forthcoming version in changelogs
+  * Contributors: Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 14 Jan 2022 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.11.3-2jammy) jammy; urgency=high
+
+  * Ignore .*/_* dirs in ament_flake8 (#335 <https://github.com/ament/ament_lint/issues/335>)
+    Other ament_* linters specifically ignore directories starting with a
+    dot or underscore when crawling for files to lint. They also do so
+    implicitly, so this change mimics that same pattern so that the behavior
+    is consistent.
+  * Update maintainers to Michael Jeronimo and Michel Hidalgo (#340 <https://github.com/ament/ament_lint/issues/340>)
+  * Contributors: Audrow Nash, Scott K Logan
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 14 Jan 2022 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.11.2-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.11.1-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.11.0-2jammy) jammy; urgency=high
+
+  * Ignore flake8-blind-except B902 (#292 <https://github.com/ament/ament_lint/issues/292>)
+  * Contributors: Scott K Logan
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.10.6-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 06 May 2021 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.10.5-2jammy) jammy; urgency=high
+
+  * Remove Claire as a maintainer. (#312 <https://github.com/ament/ament_lint/issues/312>)
+    * Remove Claire as a maintainer.
+    * Remove dead email addresses.
+    * Remove more dead email addresses.
+    * Switch setup.py maintainer to Audrow.
+  * Contributors: Chris Lalancette
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 14 Apr 2021 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.10.4-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 18 Mar 2021 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.10.3-2jammy) jammy; urgency=high
+
+  * 0.10.3
+  * Contributors: Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 03 Mar 2021 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.10.2-2jammy) jammy; urgency=high
+
+  * Add Audrow as a maintainer (#294 <https://github.com/ament/ament_lint/issues/294>)
+  * Contributors: Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 12 Feb 2021 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.10.1-2jammy) jammy; urgency=high
+
+  * Update maintainer (#274 <https://github.com/ament/ament_lint/issues/274>)
+    * update maintainer
+    * add authors
+  * Contributors: Claire Wang
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 25 Jan 2021 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.10.0-2jammy) jammy; urgency=high
+
+  * Add pytest.ini so local tests don't display warning. (#259 <https://github.com/ament/ament_lint/issues/259>)
+  * Contributors: Chris Lalancette
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Sep 2020 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.9.4-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 26 May 2020 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.9.3-2jammy) jammy; urgency=high
+
+  * support flake8 3.8 (#242 <https://github.com/ament/ament_lint/issues/242>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 May 2020 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.9.2-2jammy) jammy; urgency=high
+
+  * Allow AMENT_IGNORE markers to be directories (#232 <https://github.com/ament/ament_lint/issues/232>)
+  * Contributors: Dan Rose
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 May 2020 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.9.1-2jammy) jammy; urgency=high
+
+  * 0.9.0
+  * more verbose test_flake8 error messages (same as ros2/launch_ros#135 <https://github.com/ros2/launch_ros/issues/135>)
+  * add new main_with_errors() API that also returns the error strings if any (#221 <https://github.com/ament/ament_lint/issues/221>)
+    * return custom int subclass to include the error strings
+    * expose errors through separate function rather than magic return code object
+  * Generate xunit files valid for the junit10.xsd (#220 <https://github.com/ament/ament_lint/issues/220>)
+  * Exclude folders having AMENT_IGNORE in ament_flake8 script (#211 <https://github.com/ament/ament_lint/issues/211>)
+  * remove status attribute from result XML (#212 <https://github.com/ament/ament_lint/issues/212>)
+  * Contributors: Chris Lalancette, Dirk Thomas, Hao Peng, Jose Luis Rivero
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 10 Apr 2020 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.8.1-2jammy) jammy; urgency=high
+
+  * install resource marker file for packages (#193 <https://github.com/ament/ament_lint/issues/193>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 23 Oct 2019 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.8.0-2jammy) jammy; urgency=high
+
+  * Install manifest file in ament_flake8 (#189 <https://github.com/ament/ament_lint/issues/189>)
+    Follow-up to #185 <https://github.com/ament/ament_lint/issues/185>
+  * re-add path insertion removed from wrong package (#178 <https://github.com/ament/ament_lint/issues/178>)
+  * add mypy support for linters/testing (#154 <https://github.com/ament/ament_lint/issues/154>)
+    * add mypy support for linters/testing
+    * Update ament_cmake_mypy/doc/index.rst
+    Co-Authored-By: Kyle Fazzari <mailto:github@status.e4ward.com>
+    * fix whitespace in file and in generated xml
+    * fixes, package versioning, and test suite
+    * fix wrong separator in cmake file
+    * readd copied from comment
+    * Update ament_mypy/ament_mypy/main.py
+    Co-Authored-By: Kyle Fazzari <mailto:github@status.e4ward.com>
+    * remove mypypath auto populating
+    * add default configuration ignoring missing imports
+    * update test to remove MYPYPATH check, default config check
+    * remove extraneous path insert statement
+    * remove extraneous path insert statement
+    * update test cases for default config file change
+    * added tests for error code forwarding, fixed linter errors
+    * linter failures relating to quotes and docs
+    * add handling for notes
+    * remove ament_lint dep
+    * update regex to match drive letter on windows
+  * Contributors: Scott K Logan, Ted Kern
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 17 Sep 2019 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.7.4-2jammy) jammy; urgency=high
+
+  * declare pytest markers (#164 <https://github.com/ament/ament_lint/issues/164>)
+    * declare pytest markers
+    * add markers to ament_xmllint tests
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 31 Jul 2019 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.7.3-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 09 May 2019 21:08:00 -0000
+
+ros-humble-ament-flake8 (0.7.2-2jammy) jammy; urgency=high
+
+  * readd listener if available (#141 <https://github.com/ament/ament_lint/issues/141>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 09 May 2019 16:30:00 -0000
+
+ros-humble-ament-flake8 (0.7.1-2jammy) jammy; urgency=high
+
+  * update phrase of status messages (#137 <https://github.com/ament/ament_lint/issues/137>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 07 May 2019 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.7.0-2jammy) jammy; urgency=high
+
+  * Remove make_notifier() call (#124 <https://github.com/ament/ament_lint/issues/124>)
+  * use --extend-ignore for flake8 to keep default ignores (#122 <https://github.com/ament/ament_lint/issues/122>)
+  * Contributors: Dirk Thomas, Shane Loretz
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 11 Apr 2019 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.6.3-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 14 Jan 2019 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.6.2-2jammy) jammy; urgency=high
+
+  * Change spelling of maintainer name. (#115 <https://github.com/ament/ament_lint/issues/115>)
+    This is causing failures in CI at the moment. Until I figure out where
+    the issue lies let's just mispell it to unbreak CI.
+  * Contributors: Steven! Ragnarök
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 06 Dec 2018 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.6.1-2jammy) jammy; urgency=high
+
+  * Update maintainer for ament{,_cmake}_flake8. (#114 <https://github.com/ament/ament_lint/issues/114>)
+  * Contributors: Steven! Ragnarök
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 15 Nov 2018 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.6.0-2jammy) jammy; urgency=high
+
+  * Ignore flake8 W504 (#110 <https://github.com/ament/ament_lint/issues/110>)
+  * Contributors: Jacob Perron
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 14 Nov 2018 08:00:00 -0000
+
+ros-humble-ament-flake8 (0.5.2-2jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 27 Jun 2018 07:00:00 -0000
+
+ros-humble-ament-flake8 (0.5.1-2jammy) jammy; urgency=high
+
+  * level setup.py versions to 0.5.1
+  * Contributors: Mikael Arguedas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 Jun 2018 20:47:00 -0000
+
+ros-humble-ament-flake8 (0.5.0-2jammy) jammy; urgency=high
+
+  * set zip_safe to avoid warning during installation (#96 <https://github.com/ament/ament_lint/issues/96>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 Jun 2018 17:09:00 -0000
+
+ros-humble-ament-flake8 (0.4.0-2jammy) jammy; urgency=high
+
+  * remove test_suite, add pytest as test_requires
+  * Add I202 to the list of ignored flake8 errors. (#89 <https://github.com/ament/ament_lint/issues/89>)
+    I202 warns about newlines between groups of imports in python.
+    A recent change in flake8
+    (https://github.com/PyCQA/flake8-import-order/commit/37dafcc35eec9343641d489ac01d316cd10a6c03)
+    made this start showing up in ROS2.  Since we use whitespace
+    between imports in lots of places in ROS2, disable this
+    warning, which should get rid of this error almost everywhere.
+  * Adapt to flake8 v3.5.0 changes (#88 <https://github.com/ament/ament_lint/issues/88>)
+    * Adapt to flake8 v3.5.0 changes
+    * Add comment why this fork of get_style_guide exists
+  * Add new D106, D107 linter errors to ignored list (#86 <https://github.com/ament/ament_lint/issues/86>)
+    * Add new D107 linter error to ignored list
+    * Ignore D106 also
+  * 0.0.3
+  * Merge pull request #84 <https://github.com/ament/ament_lint/issues/84> from ament/flake8_plugins
+    update style to satisfy new flake8 plugins
+  * update style to satisfy new flake8 plugins
+  * implicitly inherit from object (only in files not copied from somewhe… (#83 <https://github.com/ament/ament_lint/issues/83>)
+    * implicitly inherit from object (only in files not copied from somewhere else)
+    * don't modify file copied from elsewhere
+  * 0.0.2
+  * Merge pull request #77 <https://github.com/ament/ament_lint/issues/77> from ament/fix_flake8_excludes
+    fix --exclude with ament_flake8
+  * fix --exclude with ament_flake8
+  * Make get_error_type_counts work for legacy api too (#70 <https://github.com/ament/ament_lint/issues/70>)
+  * Test python module import order using flake8 (#63 <https://github.com/ament/ament_lint/issues/63>)
+    * Add flake8 linter
+    * Don't deal with flake8-import-order just yet
+    * Debugging prints
+    * Reinstate import order rule
+    * Fix reporting bug by using the inner flake8 style guide
+    * Fixup
+    * Add comment on wrapper StyleGuide use
+    * use flake8 v3 (#1 <https://github.com/ament/ament_lint/issues/1>)
+    * Reorder package.xml
+    * Get the filenames from the file checkers because input_file isn't called by flake8 anymore
+    * Output count of all error types
+    * Get flake8 to use the config file
+    The current implementation of get_style_guide does not process the config file correctly.
+    * Error when flake8 v2 found
+    * Print errors like pep8
+    * remove __future__ imports
+    * add schema to manifest files
+    * Support flake8 v2 as well as v3
+    * Output checked files
+    otherwise it's not present in xunit files for tests run directly with nose (not ament_cmake_flake8)
+    * Prevent v2 imports from happening on systems with v3
+    * Flake8 replaces pep8+pyflakes
+  * Contributors: Chris Lalancette, Dirk Thomas, Mikael Arguedas, dhood
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 Dec 2017 08:00:00 -0000
+
+
