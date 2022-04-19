@@ -1,0 +1,12 @@
+Source: ros-humble-ament-lint-auto
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-core, ros-humble-ament-cmake-test, ros-humble-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-ament-lint-auto
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-cmake-core (>= 0.7.1), ros-humble-ament-cmake-test, ros-humble-ros-workspace
+Description: The auto-magic functions for ease to use of the ament linters in CMake.
