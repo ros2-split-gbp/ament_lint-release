@@ -2,6 +2,11 @@
 Changelog for package ament_cmake_cppcheck
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.10.7 (2022-04-28)
+-------------------
+* [ament_cmake_cppcheck] Fix file exclusion behavior (`#329 <https://github.com/ament/ament_lint/issues/329>`_) (`#367 <https://github.com/ament/ament_lint/issues/367>`_)
+* Contributors: Abrar Rahman Protyasha
+
 0.10.6 (2021-05-06)
 -------------------
 
