@@ -1,0 +1,12 @@
+Source: ros-galactic-ament-cmake-copyright
+Section: misc
+Priority: optional
+Maintainer: Audrow Nash <audrow@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-galactic-ament-cmake-core, ros-galactic-ament-cmake-lint-cmake <!nocheck>, ros-galactic-ament-cmake-test, ros-galactic-ament-copyright, ros-galactic-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-galactic-ament-cmake-copyright
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-galactic-ament-cmake-test, ros-galactic-ament-copyright, ros-galactic-ros-workspace
+Description: The CMake API for ament_copyright to check every source file contains copyright reference.
