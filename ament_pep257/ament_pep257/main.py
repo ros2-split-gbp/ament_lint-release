@@ -15,6 +15,7 @@
 # limitations under the License.
 
 import argparse
+from distutils.version import LooseVersion
 import logging
 import os
 import sys
@@ -187,13 +188,21 @@ def generate_pep257_report(paths, excludes, ignore, select, convention, add_igno
     report = []
 
     files_dict = {}
-    for filename, checked_codes, ignore_decorators in files_to_check:
-        if _filename_in_excludes(filename, excludes):
-            continue
-        files_dict[filename] = {
-            'select': checked_codes,
-            'ignore_decorators': ignore_decorators,
-        }
+    if LooseVersion(pydocstyle.__version__) >= LooseVersion('2.0.0'):
+        for filename, checked_codes, ignore_decorators in files_to_check:
+            if _filename_in_excludes(filename, excludes):
+                continue
+            files_dict[filename] = {
+                'select': checked_codes,
+                'ignore_decorators': ignore_decorators,
+            }
+    else:
+        for filename, select in files_to_check:
+            if _filename_in_excludes(filename, excludes):
+                continue
+            files_dict[filename] = {
+                'select': select,
+            }
 
     for filename in sorted(files_dict.keys()):
         print('checking', filename)

@@ -2,43 +2,7 @@
 Changelog for package ament_cmake_copyright
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.12.3 (2022-04-08)
--------------------
-
-0.12.2 (2022-03-28)
--------------------
-
-0.12.1 (2022-03-01)
--------------------
-* Increase the ament_cmake_copyright default timeout. (`#355 <https://github.com/ament/ament_lint/issues/355>`_)
-* Contributors: Chris Lalancette
-
-0.12.0 (2022-02-18)
--------------------
-
-0.11.4 (2022-01-14)
--------------------
-* Update forthcoming version in changelogs
-* Contributors: Audrow Nash
-
-0.11.3 (2022-01-14)
--------------------
-* [ament_cmake_copyright] Add file exclusion support (`#328 <https://github.com/ament/ament_lint/issues/328>`_)
-  * [ament_cmake_copyright] Add file exclusion support
-  In the `ament_copyright` CMake function, the optional list
-  argument `EXCLUDE` can now be used as an exclusion specifier.
-  * [ament_cmake_copyright] Fix function header typo
-  Remove reference to `cppcheck` in the `EXCLUDE` arg description.
-* Update maintainers to Michael Jeronimo and Michel Hidalgo (`#340 <https://github.com/ament/ament_lint/issues/340>`_)
-* Contributors: Abrar Rahman Protyasha, Audrow Nash
-
-0.11.2 (2021-06-18)
--------------------
-
-0.11.1 (2021-06-18)
--------------------
-
-0.11.0 (2021-06-18)
+0.10.7 (2022-04-28)
 -------------------
 
 0.10.6 (2021-05-06)

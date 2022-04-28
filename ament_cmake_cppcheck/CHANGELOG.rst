@@ -2,45 +2,10 @@
 Changelog for package ament_cmake_cppcheck
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.12.3 (2022-04-08)
+0.10.7 (2022-04-28)
 -------------------
-
-0.12.2 (2022-03-28)
--------------------
-
-0.12.1 (2022-03-01)
--------------------
-
-0.12.0 (2022-02-18)
--------------------
-
-0.11.4 (2022-01-14)
--------------------
-* Update forthcoming version in changelogs
-* Contributors: Audrow Nash
-
-0.11.3 (2022-01-14)
--------------------
-* [ament_cmake_cppcheck] Fix file exclusion behavior (`#329 <https://github.com/ament/ament_lint/issues/329>`_)
-  The `EXCLUDE` argument of the `ament_cppcheck` CMake function is
-  a list, i.e. a multi-value keyword. As such, it needs to be placed
-  out of the one-value keywords from the `cmake_parse_arguments`
-  function call.
-* Update maintainers to Michael Jeronimo and Michel Hidalgo (`#340 <https://github.com/ament/ament_lint/issues/340>`_)
-* Add cppcheck libraries option (`#323 <https://github.com/ament/ament_lint/issues/323>`_)
-  * adding ament_cppcheck libraries option
-  * pass libraries option via CMake
-  Co-authored-by: William Wedler <william.wedler@resquared.com>
-* Contributors: Abrar Rahman Protyasha, Audrow Nash, Will
-
-0.11.2 (2021-06-18)
--------------------
-
-0.11.1 (2021-06-18)
--------------------
-
-0.11.0 (2021-06-18)
--------------------
+* [ament_cmake_cppcheck] Fix file exclusion behavior (`#329 <https://github.com/ament/ament_lint/issues/329>`_) (`#367 <https://github.com/ament/ament_lint/issues/367>`_)
+* Contributors: Abrar Rahman Protyasha
 
 0.10.6 (2021-05-06)
 -------------------

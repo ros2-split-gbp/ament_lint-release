@@ -2,37 +2,7 @@
 Changelog for package ament_cmake_pycodestyle
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.12.3 (2022-04-08)
--------------------
-
-0.12.2 (2022-03-28)
--------------------
-* Improve documentation by clarifying the purpose of different tools (`#357 <https://github.com/ament/ament_lint/issues/357>`_)
-* Contributors: Bi0T1N
-
-0.12.1 (2022-03-01)
--------------------
-
-0.12.0 (2022-02-18)
--------------------
-
-0.11.4 (2022-01-14)
--------------------
-* Update forthcoming version in changelogs
-* Contributors: Audrow Nash
-
-0.11.3 (2022-01-14)
--------------------
-* Update maintainers to Michael Jeronimo and Michel Hidalgo (`#340 <https://github.com/ament/ament_lint/issues/340>`_)
-* Contributors: Audrow Nash
-
-0.11.2 (2021-06-18)
--------------------
-
-0.11.1 (2021-06-18)
--------------------
-
-0.11.0 (2021-06-18)
+0.10.7 (2022-04-28)
 -------------------
 
 0.10.6 (2021-05-06)

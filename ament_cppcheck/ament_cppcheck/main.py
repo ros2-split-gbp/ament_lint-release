@@ -39,15 +39,11 @@ def find_cppcheck_executable():
 def get_cppcheck_version(cppcheck_bin):
     version_cmd = [cppcheck_bin, '--version']
     output = subprocess.check_output(version_cmd)
-    # expecting something like b'Cppcheck 1.88\n' or b'Cppcheck 2.7 dev'
+    # expecting something like b'Cppcheck 1.88\n'
     output = output.decode().strip()
     tokens = output.split()
-    if len(tokens) not in (2, 3):
+    if len(tokens) != 2:
         raise RuntimeError("unexpected cppcheck version string '{}'".format(output))
-
-    if tokens[0] != 'Cppcheck':
-        raise RuntimeError("unexpected cppcheck version name '{}'".format(output))
-
     return tokens[1]
 
 
@@ -64,11 +60,6 @@ def main(argv=sys.argv[1:]):
         help='Files and/or directories to be checked. Directories are searched recursively for '
              'files ending in one of %s.' %
              ', '.join(["'.%s'" % e for e in extensions]))
-    parser.add_argument(
-        '--libraries',
-        nargs='*',
-        help="Library configurations to load in addition to the standard libraries of C and C++."
-             "Each library is passed to cppcheck as '--library=<library_name>'")
     parser.add_argument(
         '--include_dirs',
         nargs='*',
@@ -122,12 +113,12 @@ def main(argv=sys.argv[1:]):
         # the number of cores cannot be determined, do not extend args
         pass
 
-    # detect cppcheck 1.88 or 2.x which are much too slow
-    if 'AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS' not in os.environ:
-        if cppcheck_version == '1.88' or cppcheck_version.startswith('2.'):
+    # detect cppcheck 1.88 which caused issues
+    if 'AMENT_CPPCHECK_ALLOW_1_88' not in os.environ:
+        if cppcheck_version == '1.88':
             print(
-                f'cppcheck {cppcheck_version} has known performance issues and therefore will not '
-                'be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.',
+                'cppcheck 1.88 has known performance issues and therefore will not be used, '
+                'set the AMENT_CPPCHECK_ALLOW_1_88 environment variable to override this.',
                 file=sys.stderr,
             )
 
@@ -135,7 +126,7 @@ def main(argv=sys.argv[1:]):
                 report = {input_file: [] for input_file in files}
                 write_xunit_file(
                     args.xunit_file, report, time.time() - start_time,
-                    skip=f'cppcheck {cppcheck_version} performance issues'
+                    skip='cppcheck 1.88 performance issues'
                 )
                 return 0
 
@@ -153,8 +144,6 @@ def main(argv=sys.argv[1:]):
            '--suppress=unknownMacro']
     if args.language:
         cmd.extend(['--language={0}'.format(args.language)])
-    for library in (args.libraries or []):
-        cmd.extend(['--library={0}'.format(library)])
     for include_dir in (args.include_dirs or []):
         cmd.extend(['-I', include_dir])
     for exclude in (args.exclude or []):

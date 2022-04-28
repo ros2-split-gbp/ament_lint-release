@@ -5,7 +5,7 @@ package_name = 'ament_mypy'
 
 setup(
     name=package_name,
-    version='0.12.3',
+    version='0.10.7',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
@@ -19,8 +19,8 @@ setup(
     zip_safe=False,
     author='Ted Kern',
     author_email='ted.kern@canonical.com',
-    maintainer='Michael Jeronimo, Michel Hidalgo',
-    maintainer_email='michael.jeronimo@openrobotics.org, michel@ekumenlabs.com',
+    maintainer='Ted Kern',
+    maintainer_email='ted.kern@canonical.com',
     url='https://github.com/ament/ament_lint',
     download_url='https://github.com/ament/ament_lint/releases',
     keywords=['ROS'],

@@ -1,7 +1,7 @@
 ament_pclint
 ==============
 
-Performs a static code analysis of C / C++ source files using `PC-lint
+Performs a static code analysis of C / C++ source files using `PCLint
 <http://www.gimpel.com/html/index.htm>`_.
 
 How to run the check from the command line?

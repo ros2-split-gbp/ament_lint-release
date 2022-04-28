@@ -5,7 +5,7 @@ package_name = 'ament_pclint'
 
 setup(
     name=package_name,
-    version='0.12.3',
+    version='0.10.7',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
@@ -37,8 +37,8 @@ setup(
     zip_safe=False,
     author='Juan Pablo Samper',
     author_email='jp.samper@apex.ai',
-    maintainer='Michael Jeronimo, Michel Hidalgo',
-    maintainer_email='michael.jeronimo@openrobotics.org, michel@ekumenlabs.com',
+    maintainer='Juan Pablo Samper',
+    maintainer_email='jp.samper@apex.ai',
     url='https://github.com/ament/ament_lint',
     download_url='',
     keywords=['ament'],
@@ -48,9 +48,9 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development',
     ],
-    description='Static code analysis on C/C++ code using PC-lint.',
+    description='Static code analysis on C/C++ code using PCLint.',
     long_description="""\
-The ability to perform static code analysis on C/C++ code using PC-lint
+The ability to perform static code analysis on C/C++ code using PCLint
 and generate xUnit test result files.""",
     license='Apache License, Version 2.0',
     tests_require=['pytest'],

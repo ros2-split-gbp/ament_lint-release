@@ -38,12 +38,7 @@ UNKNOWN_IDENTIFIER = '<unknown>'
 
 def get_copyright_names():
     names = {}
-    entry_points = importlib_metadata.entry_points()
-    if hasattr(entry_points, 'select'):
-        copyright_groups = entry_points.select(group=COPYRIGHT_GROUP)
-    else:
-        copyright_groups = entry_points.get(COPYRIGHT_GROUP, [])
-    for entry_point in copyright_groups:
+    for entry_point in importlib_metadata.entry_points().get(COPYRIGHT_GROUP, []):
         assert entry_point.name != UNKNOWN_IDENTIFIER, \
             "Invalid entry point name '%s'" % entry_point.name
         name = entry_point.load()
@@ -53,12 +48,7 @@ def get_copyright_names():
 
 def get_licenses():
     licenses = {}
-    entry_points = importlib_metadata.entry_points()
-    if hasattr(entry_points, 'select'):
-        license_groups = entry_points.select(group=LICENSE_GROUP)
-    else:
-        license_groups = entry_points.get(LICENSE_GROUP, [])
-    for entry_point in license_groups:
+    for entry_point in importlib_metadata.entry_points().get(LICENSE_GROUP, []):
         assert entry_point.name != UNKNOWN_IDENTIFIER, \
             "Invalid entry point name '%s'" % entry_point.name
         licenses[entry_point.name] = entry_point.load()
