@@ -1,0 +1,12 @@
+Source: ros-galactic-ament-pycodestyle
+Section: misc
+Priority: optional
+Maintainer: Audrow Nash <audrow@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-galactic-ros-workspace, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-galactic-ament-pycodestyle
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, python3-pycodestyle, ros-galactic-ros-workspace
+Description: The ability to check code against the style conventions in PEP 8 and generate xUnit test result files.
