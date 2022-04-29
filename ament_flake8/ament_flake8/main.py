@@ -15,7 +15,6 @@
 # limitations under the License.
 
 import argparse
-from distutils.version import LooseVersion
 import os
 import sys
 import time
@@ -23,9 +22,8 @@ from xml.sax.saxutils import escape
 from xml.sax.saxutils import quoteattr
 
 import flake8
-if LooseVersion(flake8.__version__) >= '3.0':
-    from flake8.main import application as flake8_app
-    from flake8.api.legacy import StyleGuide
+from flake8.api.legacy import StyleGuide
+from flake8.main import application as flake8_app
 
 
 def main(argv=sys.argv[1:]):
@@ -82,6 +80,9 @@ def main_with_errors(argv=sys.argv[1:]):
         if 'AMENT_IGNORE' in dirnames + filenames:
             dirnames[:] = []
             args.excludes.append(dirpath)
+        else:
+            # ignore folder starting with . or _
+            args.excludes.extend(d for d in dirnames if d[0] in ['.', '_'])
 
     report = generate_flake8_report(
         args.config_file, args.paths, args.excludes,
@@ -173,10 +174,6 @@ def get_flake8_style_guide(argv):
 
 
 def generate_flake8_report(config_file, paths, excludes, max_line_length=None):
-    if LooseVersion(flake8.__version__) < '3.0':
-        from ament_flake8.legacy import generate_flake8_report
-        return generate_flake8_report(config_file, paths, excludes, max_line_length)
-
     flake8_argv = []
     if config_file is not None:
         flake8_argv.append('--config={0}'.format(config_file))

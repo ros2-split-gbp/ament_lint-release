@@ -2,13 +2,17 @@
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>ament_cmake_clang_tidy</name>
-  <version>0.10.7</version>
+  <version>0.13.0</version>
   <description>
     The CMake API for ament_clang_tidy to lint C / C++ code using clang tidy.
   </description>
-  <maintainer email="audrow@openrobotics.org">Audrow Nash</maintainer>
+
+  <maintainer email="michael.jeronimo@openrobotics.org">Michael Jeronimo</maintainer>
+  <maintainer email="michel@ekumenlabs.com">Michel Hidalgo</maintainer>
+
   <license>Apache License 2.0</license>
 
+  <author email="audrow@openrobotics.org">Audrow Nash</author>
   <author>Claire Wang</author>
 
   <buildtool_depend>ament_cmake_core</buildtool_depend>

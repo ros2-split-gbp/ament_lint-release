@@ -5,7 +5,7 @@ package_name = 'ament_clang_tidy'
 
 setup(
     name=package_name,
-    version='0.10.7',
+    version='0.13.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
@@ -19,8 +19,8 @@ setup(
     zip_safe=False,
     author='John Shepherd',
     author_email='john@openrobotics.org',
-    maintainer='Audrow Nash',
-    maintainer_email='audrow@openrobotics.org',
+    maintainer='Michael Jeronimo, Michel Hidalgo',
+    maintainer_email='michael.jeronimo@openrobotics.org, michel@ekumenlabs.com',
     url='https://github.com/ament/ament_lint',
     download_url='https://github.com/ament/ament_lint/releases',
     keywords=['ROS'],
