@@ -1,0 +1,300 @@
+ros-humble-ament-pyflakes (0.12.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 09 May 2022 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.12.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 Apr 2022 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.12.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 28 Mar 2022 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.12.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 01 Mar 2022 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.12.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Feb 2022 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.11.4-1bullseye) bullseye; urgency=high
+
+  * Update forthcoming version in changelogs
+  * Contributors: Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 14 Jan 2022 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.11.3-1bullseye) bullseye; urgency=high
+
+  * Update maintainers to Michael Jeronimo and Michel Hidalgo (#340 <https://github.com/ament/ament_lint/issues/340>)
+  * Contributors: Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 14 Jan 2022 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.11.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.11.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.11.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.10.6-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 06 May 2021 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.10.5-1bullseye) bullseye; urgency=high
+
+  * Remove Claire as a maintainer. (#312 <https://github.com/ament/ament_lint/issues/312>)
+    * Remove Claire as a maintainer.
+    * Remove dead email addresses.
+    * Remove more dead email addresses.
+    * Switch setup.py maintainer to Audrow.
+  * Contributors: Chris Lalancette
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 14 Apr 2021 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.10.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 18 Mar 2021 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.10.3-1bullseye) bullseye; urgency=high
+
+  * 0.10.3
+  * Contributors: Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 03 Mar 2021 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.10.2-1bullseye) bullseye; urgency=high
+
+  * Add Audrow as a maintainer (#294 <https://github.com/ament/ament_lint/issues/294>)
+  * Drop trailing tab from package manifests (#291 <https://github.com/ament/ament_lint/issues/291>)
+    Follow-up to 8bf194aa1ac282db5483dd0d3fefff8f325b0db8
+  * Contributors: Audrow Nash, Scott K Logan
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 12 Feb 2021 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.10.1-1bullseye) bullseye; urgency=high
+
+  * Update maintainer (#274 <https://github.com/ament/ament_lint/issues/274>)
+    * update maintainer
+    * add authors
+  * Contributors: Claire Wang
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 25 Jan 2021 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.10.0-1bullseye) bullseye; urgency=high
+
+  * Add pytest.ini so local tests don't display warning. (#259 <https://github.com/ament/ament_lint/issues/259>)
+  * Contributors: Chris Lalancette
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Sep 2020 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.9.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 26 May 2020 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.9.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 May 2020 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.9.2-1bullseye) bullseye; urgency=high
+
+  * Allow AMENT_IGNORE markers to be directories (#232 <https://github.com/ament/ament_lint/issues/232>)
+  * Contributors: Dan Rose
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 May 2020 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.9.1-1bullseye) bullseye; urgency=high
+
+  * 0.9.0
+  * Generate xunit files valid for the junit10.xsd (#220 <https://github.com/ament/ament_lint/issues/220>)
+  * Rename pep8 packages to pycodestyle (part 2 of 2)
+    The python package 'pep8' has been renamed to 'pycodestyle'. This change
+    follows suit by renaming ament_pep8 and ament_cmake_pep8 to
+    ament_pycodestyle and ament_cmake_pycodestyle respectively.
+  * remove status attribute from result XML (#212 <https://github.com/ament/ament_lint/issues/212>)
+  * Contributors: Chris Lalancette, Dirk Thomas, Jose Luis Rivero, Scott K Logan
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 10 Apr 2020 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.8.1-1bullseye) bullseye; urgency=high
+
+  * fix pytest warning about unknown markers (#194 <https://github.com/ament/ament_lint/issues/194>)
+  * install resource marker file for packages (#193 <https://github.com/ament/ament_lint/issues/193>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 23 Oct 2019 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.8.0-1bullseye) bullseye; urgency=high
+
+  * install manifest files in Python packages (#185 <https://github.com/ament/ament_lint/issues/185>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 17 Sep 2019 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.7.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 31 Jul 2019 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.7.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 09 May 2019 21:08:00 -0000
+
+ros-humble-ament-pyflakes (0.7.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 09 May 2019 16:30:00 -0000
+
+ros-humble-ament-pyflakes (0.7.1-1bullseye) bullseye; urgency=high
+
+  * update phrase of status messages (#137 <https://github.com/ament/ament_lint/issues/137>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 07 May 2019 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.7.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 11 Apr 2019 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.6.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 14 Jan 2019 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.6.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 06 Dec 2018 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.6.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 15 Nov 2018 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.6.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 14 Nov 2018 08:00:00 -0000
+
+ros-humble-ament-pyflakes (0.5.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 27 Jun 2018 07:00:00 -0000
+
+ros-humble-ament-pyflakes (0.5.1-1bullseye) bullseye; urgency=high
+
+  * level setup.py versions to 0.5.1
+  * Contributors: Mikael Arguedas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 Jun 2018 20:47:00 -0000
+
+ros-humble-ament-pyflakes (0.5.0-1bullseye) bullseye; urgency=high
+
+  * add pytest markers to linter tests
+  * set zip_safe to avoid warning during installation (#96 <https://github.com/ament/ament_lint/issues/96>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 Jun 2018 17:09:00 -0000
+
+ros-humble-ament-pyflakes (0.4.0-1bullseye) bullseye; urgency=high
+
+  * remove test_suite, add pytest as test_requires
+  * 0.0.3
+  * Merge pull request #84 <https://github.com/ament/ament_lint/issues/84> from ament/flake8_plugins
+    update style to satisfy new flake8 plugins
+  * update style to satisfy new flake8 plugins
+  * implicitly inherit from object (only in files not copied from somewhe… (#83 <https://github.com/ament/ament_lint/issues/83>)
+    * implicitly inherit from object (only in files not copied from somewhere else)
+    * don't modify file copied from elsewhere
+  * Merge pull request #81 <https://github.com/ament/ament_lint/issues/81> from ament/ignore_build_spaces
+    ignore folders with an AMENT_IGNORE file, e.g. build spaces
+  * ignore folders with an AMENT_IGNORE file, e.g. build spaces
+  * 0.0.2
+  * remove __future__ imports
+  * update schema url
+  * add schema to manifest files
+  * Merge pull request #49 <https://github.com/ament/ament_lint/issues/49> from ament/xenial
+    use upstream pydocstyle
+  * use new pydocstyle
+  * Merge pull request #51 <https://github.com/ament/ament_lint/issues/51> from ament/lint_generated_code
+    extend linter API to allow overriding the max line length
+  * handle error messages where the line itself contains additional percent characters
+  * Merge pull request #42 <https://github.com/ament/ament_lint/issues/42> from ament/remove_second_extension
+    remove result type extension from testsuite name
+  * remove result type extension from testsuite name
+  * apply normpath to prevent './' prefix (fix #24 <https://github.com/ament/ament_lint/issues/24>)
+  * Merge pull request #19 <https://github.com/ament/ament_lint/issues/19> from ament/split_linter_packages_in_python_and_cmake
+    split linter packages in python and cmake
+  * make use of python linter packages
+  * support excluding filenames from copyright, pep8, pyflakes check
+  * move cmake part of ament_pyflakes to ament_cmake_pyflakes
+  * move cmake part of ament_pep8 to ament_cmake_pep8
+  * fix code style
+  * disable debug output
+  * add trailing newline to generated test result files
+  * add missing copyright / license information
+  * Merge pull request #14 <https://github.com/ament/ament_lint/issues/14> from ament/test_runner_windows
+    change test runner to work on windows
+  * change test runner to work on windows
+  * Merge pull request #9 <https://github.com/ament/ament_lint/issues/9> from ament/docs
+    add docs for linters
+  * add docs for linters
+  * modify generated unit test files for a better hierarchy in Jenkins
+  * fix copy-n-pasted license names
+  * make testname argument optional for all linters
+  * use other linters for the linter packages where possible
+  * run ament_copyright and ament_pyflakes with Python 3
+  * Merge pull request #2 <https://github.com/ament/ament_lint/issues/2> from ament/ament_lint_auto
+    allow linting based on test dependencies only
+  * add ament_lint_auto and ament_lint_common, update all linter packages to implement extension point of ament_lint_auto
+  * use project(.. NONE)
+  * update to latest refactoring of ament_cmake
+  * add dependency on ament_cmake_environment
+  * add ament_pyflakes
+  * Contributors: Dirk Thomas, Mikael Arguedas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 Dec 2017 08:00:00 -0000
+
+
