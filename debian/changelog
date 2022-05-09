@@ -1,0 +1,372 @@
+ros-humble-ament-uncrustify (0.12.4-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 09 May 2022 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.12.3-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 Apr 2022 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.12.2-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 28 Mar 2022 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.12.1-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 01 Mar 2022 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.12.0-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Feb 2022 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.11.4-1jammy) jammy; urgency=high
+
+  * Update forthcoming version in changelogs
+  * Contributors: Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 14 Jan 2022 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.11.3-1jammy) jammy; urgency=high
+
+  * [ament_uncrustify] Fix file exclusion behavior (#334 <https://github.com/ament/ament_lint/issues/334>)
+    * [ament_uncrustify] Fix file exclusion behavior
+    This PR fixes the file exclusion behavior reported in #326 <https://github.com/ament/ament_lint/issues/326>.
+    Specifically, the exclusion list is matched against
+    files/directories as the search path is traversed.
+    Tries to maintain consistency with #327 <https://github.com/ament/ament_lint/issues/327>.
+    * [ament_uncrustify] Add file exclusion tests
+    * [ament_uncrustify] Remove erroneous pytest marker
+  * Update maintainers to Michael Jeronimo and Michel Hidalgo (#340 <https://github.com/ament/ament_lint/issues/340>)
+  * [ament_uncrustify] Add ament_lint tests (#338 <https://github.com/ament/ament_lint/issues/338>)
+    * Add ament_lint tests on ament_uncrustify
+    * Address linter warnings in ament_uncrustify
+  * Contributors: Abrar Rahman Protyasha, Audrow Nash
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 14 Jan 2022 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.11.2-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.11.1-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.11.0-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Jun 2021 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.10.6-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 06 May 2021 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.10.5-1jammy) jammy; urgency=high
+
+  * Remove Claire as a maintainer. (#312 <https://github.com/ament/ament_lint/issues/312>)
+    * Remove Claire as a maintainer.
+    * Remove dead email addresses.
+    * Remove more dead email addresses.
+    * Switch setup.py maintainer to Audrow.
+  * Contributors: Chris Lalancette
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 14 Apr 2021 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.10.4-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 18 Mar 2021 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.10.3-1jammy) jammy; urgency=high
+
+  * 0.10.3
+  * Allow 'C++' as language, but convert it to 'CPP' (#302 <https://github.com/ament/ament_lint/issues/302>)
+  * Allow correct languages on uncrustify (#272 <https://github.com/ament/ament_lint/issues/272>)
+    * Allow correct languages on uncrustify.
+    * Update dictionary.
+  * Contributors: Audrow Nash, Miguel Company
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 03 Mar 2021 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.10.2-1jammy) jammy; urgency=high
+
+  * Add Audrow as a maintainer (#294 <https://github.com/ament/ament_lint/issues/294>)
+  * Drop trailing tab from package manifests (#291 <https://github.com/ament/ament_lint/issues/291>)
+    Follow-up to 8bf194aa1ac282db5483dd0d3fefff8f325b0db8
+  * Contributors: Audrow Nash, Scott K Logan
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 12 Feb 2021 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.10.1-1jammy) jammy; urgency=high
+
+  * Update maintainer (#274 <https://github.com/ament/ament_lint/issues/274>)
+    * update maintainer
+    * add authors
+  * Contributors: Claire Wang
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 25 Jan 2021 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.10.0-1jammy) jammy; urgency=high
+
+  * Add pytest.ini so local tests don't display warning. (#259 <https://github.com/ament/ament_lint/issues/259>)
+  * Contributors: Chris Lalancette
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 18 Sep 2020 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.9.4-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 26 May 2020 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.9.3-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 May 2020 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.9.2-1jammy) jammy; urgency=high
+
+  * Allow AMENT_IGNORE markers to be directories (#232 <https://github.com/ament/ament_lint/issues/232>)
+  * Contributors: Dan Rose
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 May 2020 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.9.1-1jammy) jammy; urgency=high
+
+  * 0.9.0
+  * fix TypeError in ament_uncrustify (#228 <https://github.com/ament/ament_lint/issues/228>)
+  * Generate xunit files valid for the junit10.xsd (#220 <https://github.com/ament/ament_lint/issues/220>)
+  * pass explicit language to uncrustify (#214 <https://github.com/ament/ament_lint/issues/214>)
+    * pass explicitl language to uncrustify
+    * remove dst before renaming file to work on Windows
+    * use dict comprehension
+    * conditionally pass -l in both commands
+    * remove unncessary line
+    * fix comprehension
+    * fix dict after fiddling with comprehension
+    * add CMake option for force specific language for uncrustify
+    * feedback about help message
+  * remove status attribute from result XML (#212 <https://github.com/ament/ament_lint/issues/212>)
+  * enable nl_func_call_start_multi_line in uncrustify (#210 <https://github.com/ament/ament_lint/issues/210>)
+  * Contributors: Chris Lalancette, Dirk Thomas, Jose Luis Rivero
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 10 Apr 2020 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.8.1-1jammy) jammy; urgency=high
+
+  * install resource marker file for packages (#193 <https://github.com/ament/ament_lint/issues/193>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 23 Oct 2019 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.8.0-1jammy) jammy; urgency=high
+
+  * install manifest files in Python packages (#185 <https://github.com/ament/ament_lint/issues/185>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 17 Sep 2019 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.7.4-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 31 Jul 2019 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.7.3-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 09 May 2019 21:08:00 -0000
+
+ros-humble-ament-uncrustify (0.7.2-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 09 May 2019 16:30:00 -0000
+
+ros-humble-ament-uncrustify (0.7.1-1jammy) jammy; urgency=high
+
+  * use explicit encoding when reading files (#138 <https://github.com/ament/ament_lint/issues/138>)
+  * update phrase of status messages (#137 <https://github.com/ament/ament_lint/issues/137>)
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Tue, 07 May 2019 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.7.0-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 11 Apr 2019 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.6.3-1jammy) jammy; urgency=high
+
+  * [ament_uncrustify] Update uncrustiy configuration
+    Added new options with defaults.
+  * Contributors: Jacob Perron
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 14 Jan 2019 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.6.2-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 06 Dec 2018 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.6.1-1jammy) jammy; urgency=high
+
+
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Thu, 15 Nov 2018 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.6.0-1jammy) jammy; urgency=high
+
+  * update configuration to 0.67 (#103 <https://github.com/ament/ament_lint/issues/103>)
+    * update configuration to 0.67
+    * force sp_fparen_brace_initializer as it overrides sp_fparen_brace
+  * Contributors: Mikael Arguedas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 14 Nov 2018 08:00:00 -0000
+
+ros-humble-ament-uncrustify (0.5.2-1jammy) jammy; urgency=high
+
+  * use uncrustify_vendor as a dependency (#102 <https://github.com/ament/ament_lint/issues/102>)
+  * Contributors: Mikael Arguedas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Wed, 27 Jun 2018 07:00:00 -0000
+
+ros-humble-ament-uncrustify (0.5.1-1jammy) jammy; urgency=high
+
+  * level setup.py versions to 0.5.1
+  * Contributors: Mikael Arguedas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 Jun 2018 20:47:00 -0000
+
+ros-humble-ament-uncrustify (0.5.0-1jammy) jammy; urgency=high
+
+  * set zip_safe to avoid warning during installation (#96 <https://github.com/ament/ament_lint/issues/96>)
+  * Merge pull request #95 <https://github.com/ament/ament_lint/issues/95> from ament/uncrustify_0.66.1
+    update uncrustify config to version 0.66.1
+  * work around overmatching of nl_fcall_brace, since we don't use it just ignore it (which is the default anyway)
+  * update uncrustify config to version 0.66.1
+  * Contributors: Dirk Thomas
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Mon, 18 Jun 2018 17:09:00 -0000
+
+ros-humble-ament-uncrustify (0.4.0-1jammy) jammy; urgency=high
+
+  * remove test_suite, add pytest as test_requires
+  * Merge pull request #85 <https://github.com/ament/ament_lint/issues/85> from ament/uncrustify_master
+    update uncrustify config
+  * shuffle order of option groups as in new uncrustify version
+  * update uncrustify config
+  * 0.0.3
+  * Merge pull request #84 <https://github.com/ament/ament_lint/issues/84> from ament/flake8_plugins
+    update style to satisfy new flake8 plugins
+  * update style to satisfy new flake8 plugins
+  * Merge pull request #81 <https://github.com/ament/ament_lint/issues/81> from ament/ignore_build_spaces
+    ignore folders with an AMENT_IGNORE file, e.g. build spaces
+  * ignore folders with an AMENT_IGNORE file, e.g. build spaces
+  * 0.0.2
+  * remove __future__ imports
+  * update schema url
+  * add schema to manifest files
+  * fix undefined variable in case of exceptions
+  * Merge pull request #52 <https://github.com/ament/ament_lint/issues/52> from ament/lint_generated_code
+    fix handling of --root
+  * fix custom line length for uncrustify on Windows
+  * Merge pull request #51 <https://github.com/ament/ament_lint/issues/51> from ament/lint_generated_code
+    extend linter API to allow overriding the max line length
+  * add CMake argument to override max line length for linters as well as the root for cpplint
+  * Merge pull request #44 <https://github.com/ament/ament_lint/issues/44> from ament/uncrustify_0.62
+    update config to uncrustify 0.62
+  * update config to uncrustify 0.62
+  * Merge pull request #43 <https://github.com/ament/ament_lint/issues/43> from ament/ignore_space_after_semicolon
+    ignore space after a semi colon
+  * ignore space after a semi colon
+  * Merge pull request #42 <https://github.com/ament/ament_lint/issues/42> from ament/remove_second_extension
+    remove result type extension from testsuite name
+  * remove result type extension from testsuite name
+  * Merge pull request #25 <https://github.com/ament/ament_lint/issues/25> from ament/test_repeated_publisher_subscriber
+    disable multi-line comment formatting since the result is just not good
+  * disable multi-line comment formatting since the result is just not good
+  * update style rule for preprocessor stringify operator
+  * apply normpath to prevent './' prefix (fix #24 <https://github.com/ament/ament_lint/issues/24>)
+  * Merge pull request #23 <https://github.com/ament/ament_lint/issues/23> from ament/uncrustify_exclude_option
+    add --exclude option to ament_uncrustify
+  * add --exclude option to ament_uncrustify
+  * treat enum like structs for newlines before {, allow newline in empty block
+  * fix overwriting later used list, abort on non-deterministic values
+  * update uncrustify config
+  * fix location of uncrustify files on Windows
+  * improve debugging of uncrustify errors
+  * Merge pull request #19 <https://github.com/ament/ament_lint/issues/19> from ament/split_linter_packages_in_python_and_cmake
+    split linter packages in python and cmake
+  * move cmake part of ament_uncrustify to ament_cmake_uncrustify
+  * move cmake part of ament_pyflakes to ament_cmake_pyflakes
+  * move cmake part of ament_pep8 to ament_cmake_pep8
+  * move cmake part of ament_lint_cmake to ament_cmake_lint_cmake
+  * pass relative paths to uncrustify on Windows
+  * fix finding uncrustify on windows
+  * disable debug output
+  * update uncrustify config (related to #18 <https://github.com/ament/ament_lint/issues/18>)
+  * update uncrustify config (related to #18 <https://github.com/ament/ament_lint/issues/18>)
+  * update uncrustify config (related to #18 <https://github.com/ament/ament_lint/issues/18>)
+  * update uncrustify config to version 0.61 (related to #18 <https://github.com/ament/ament_lint/issues/18>)
+  * update uncrustify config (related to #18 <https://github.com/ament/ament_lint/issues/18>)
+  * update uncrustify config (related to #18 <https://github.com/ament/ament_lint/issues/18>)
+  * Merge pull request #18 <https://github.com/ament/ament_lint/issues/18> from ament/uncrustify_config
+    update uncrustify config
+  * update uncrustify config
+  * fix uncrustify unit test results
+  * update uncrustify config: treat structs like classes instead of ifs
+  * add trailing newline to generated test result files
+  * add missing copyright / license information
+  * Merge pull request #14 <https://github.com/ament/ament_lint/issues/14> from ament/test_runner_windows
+    change test runner to work on windows
+  * change test runner to work on windows
+  * set code_width in uncrustify to 100 characters
+  * update uncrustify configuration to enforce newlines before curly braces for namespaces, templates, classes and functions
+  * add configuration file for ament_pep8, set max-line-length to 99, don't use default ignores
+  * Merge pull request #9 <https://github.com/ament/ament_lint/issues/9> from ament/docs
+    add docs for linters
+  * add docs for linters
+  * modify generated unit test files for a better hierarchy in Jenkins
+  * fix copy-n-pasted license names
+  * make testname argument optional for all linters
+  * use other linters for the linter packages where possible
+  * code style only
+  * Merge pull request #2 <https://github.com/ament/ament_lint/issues/2> from ament/ament_lint_auto
+    allow linting based on test dependencies only
+  * add ament_lint_auto and ament_lint_common, update all linter packages to implement extension point of ament_lint_auto
+  * use project(.. NONE)
+  * update to latest refactoring of ament_cmake
+  * add dependency on ament_cmake_environment
+  * Merge pull request #1 <https://github.com/ament/ament_lint/issues/1> from ament/uncrustify_google
+    update uncrustify config to reflect google code style
+  * add ament_clang_format
+  * update uncrustify config to reflect google code style
+  * add --reformat option to ament_uncrustify, run uncrustify multiple times if necessary
+  * add ament_uncrustify
+  * Contributors: Dirk Thomas, William Woodall
+
+ -- Michael Jeronimo <michael.jeronimo@openrobotics.org>  Fri, 08 Dec 2017 08:00:00 -0000
+
+
