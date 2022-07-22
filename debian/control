@@ -1,0 +1,12 @@
+Source: ros-foxy-ament-cpplint
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest, ros-foxy-ament-copyright, ros-foxy-ament-flake8, ros-foxy-ament-pep257, ros-foxy-ros-workspace, python3-all, python3-setuptools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-foxy-ament-cpplint
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-foxy-ros-workspace
+Description: The ability to check code against the Google style conventions using cpplint and generate xUnit test result files.
