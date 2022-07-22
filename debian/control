@@ -1,0 +1,12 @@
+Source: ros-foxy-ament-cmake-flake8
+Section: misc
+Priority: optional
+Maintainer: Steven! Ragnarok <steven@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-foxy-ament-cmake-copyright, ros-foxy-ament-cmake-core, ros-foxy-ament-cmake-lint-cmake, ros-foxy-ament-cmake-test, ros-foxy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-foxy-ament-cmake-flake8
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-foxy-ament-cmake-test, ros-foxy-ament-flake8, ros-foxy-ros-workspace
+Description: The CMake API for ament_flake8 to check code syntax and style conventions with flake8.
