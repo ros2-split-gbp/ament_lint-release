@@ -1,0 +1,12 @@
+Source: ros-foxy-ament-uncrustify
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-foxy-ros-workspace, python3-all, python3-setuptools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-foxy-ament-uncrustify
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-foxy-uncrustify-vendor, ros-foxy-ros-workspace
+Description: The ability to check code against style conventions using uncrustify and generate xUnit test result files.
