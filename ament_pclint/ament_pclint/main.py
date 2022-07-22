@@ -32,7 +32,7 @@ def main(argv=sys.argv[1:]):
     extensions = ['c', 'cc', 'cpp', 'cxx', 'c++']
 
     parser = argparse.ArgumentParser(
-        description='Perform static code analysis using PC-lint.',
+        description='Perform static code analysis using pclint.',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
         'paths',

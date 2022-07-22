@@ -60,23 +60,21 @@ class FileDescriptor:
             return
 
         for name, license_ in get_licenses().items():
-            templates = getattr(license_, license_part)
-            for template in templates:
-                formatted_template = remove_formatting(template)
-                last_index = -1
-                for license_section in formatted_template.split('{copyright_holder}'):
-                    # OK, now look for each section of the license in the incoming
-                    # content.
-                    index = remove_formatting(content).find(license_section.strip())
-                    if index == -1 or index <= last_index:
-                        # Some part of the license is not in the content, or the license
-                        # is rearranged, this license doesn't match.
-                        break
-                    last_index = index
-                else:
-                    # We found the license, so set it
-                    self.license_identifier = name
+            template = remove_formatting(getattr(license_, license_part))
+            last_index = -1
+            for license_section in template.split('{copyright_holder}'):
+                # OK, now look for each section of the license in the incoming
+                # content.
+                index = remove_formatting(content).find(license_section.strip())
+                if index == -1 or index <= last_index:
+                    # Some part of the license is not in the content, or the license
+                    # is rearranged, this license doesn't match.
                     break
+                last_index = index
+            else:
+                # We found the license, so set it
+                self.license_identifier = name
+                break
 
 
 class SourceDescriptor(FileDescriptor):
@@ -121,7 +119,7 @@ class SourceDescriptor(FileDescriptor):
         self.identify_copyright()
 
         content = '{copyright}' + remaining_block
-        self.identify_license(content, 'file_headers')
+        self.identify_license(content, 'file_header')
 
 
 class ContributingDescriptor(FileDescriptor):
@@ -134,7 +132,7 @@ class ContributingDescriptor(FileDescriptor):
         if not self.content:
             return
 
-        self.identify_license(self.content, 'contributing_files')
+        self.identify_license(self.content, 'contributing_file')
 
 
 class LicenseDescriptor(FileDescriptor):
@@ -147,7 +145,7 @@ class LicenseDescriptor(FileDescriptor):
         if not self.content:
             return
 
-        self.identify_license(self.content, 'license_files')
+        self.identify_license(self.content, 'license_file')
 
 
 def parse_file(path):

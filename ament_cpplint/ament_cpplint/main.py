@@ -15,7 +15,6 @@
 # limitations under the License.
 
 import argparse
-import glob
 import os
 import re
 import sys
@@ -79,10 +78,6 @@ def main(argv=sys.argv[1:]):
         '--root', type=str,
         help='The --root option for cpplint')
     parser.add_argument(
-        '--exclude', default=[],
-        nargs='*',
-        help='Exclude C/C++ files from being checked.')
-    parser.add_argument(
         'paths',
         nargs='*',
         default=[os.curdir],
@@ -124,13 +119,14 @@ def main(argv=sys.argv[1:]):
 
     argv.append('--linelength=%d' % args.linelength)
 
-    groups = get_file_groups(args.paths, extensions + headers, args.exclude)
+    groups = get_file_groups(args.paths, extensions + headers)
     if not groups:
         print('No files found', file=sys.stderr)
         return 1
 
     # hook into error reporting
-    DefaultError = cpplint.Error  # noqa: N806
+    import ament_cpplint.cpplint
+    DefaultError = ament_cpplint.cpplint.Error  # noqa: N806
     report = []
 
     # invoke cpplint for each root group of files
@@ -148,7 +144,6 @@ def main(argv=sys.argv[1:]):
         else:
             print("Not using '--root'")
         print('')
-
         arguments += files
         filenames = ParseArguments(arguments)
 
@@ -157,7 +152,7 @@ def main(argv=sys.argv[1:]):
             errors = []
 
             def custom_error(filename, linenum, category, confidence, message):
-                if cpplint._ShouldPrintError(category, confidence, linenum):
+                if ament_cpplint.cpplint._ShouldPrintError(category, confidence, linenum):
                     errors.append({
                         'linenum': linenum,
                         'category': category,
@@ -165,7 +160,7 @@ def main(argv=sys.argv[1:]):
                         'message': message,
                     })
                 DefaultError(filename, linenum, category, confidence, message)
-            cpplint.Error = custom_error
+            ament_cpplint.cpplint.Error = custom_error
 
             ProcessFile(filename, _cpplint_state.verbose_level)
             report.append((filename, errors))
@@ -204,12 +199,7 @@ def main(argv=sys.argv[1:]):
     return 1 if _cpplint_state.error_count else 0
 
 
-def get_file_groups(paths, extensions, exclude_patterns):
-    excludes = []
-    for exclude_pattern in exclude_patterns:
-        excludes.extend(glob.glob(exclude_pattern))
-    excludes = {os.path.realpath(x) for x in excludes}
-
+def get_file_groups(paths, extensions):
     # dict mapping root path to files
     groups = {}
     for path in paths:
@@ -226,14 +216,10 @@ def get_file_groups(paths, extensions, exclude_patterns):
                 for filename in sorted(filenames):
                     _, ext = os.path.splitext(filename)
                     if ext in ('.%s' % e for e in extensions):
-                        filepath = os.path.join(dirpath, filename)
-                        if os.path.realpath(filepath) not in excludes:
-                            append_file_to_group(groups, filepath)
-
+                        append_file_to_group(groups,
+                                             os.path.join(dirpath, filename))
         if os.path.isfile(path):
-            if os.path.realpath(path) not in excludes:
-                append_file_to_group(groups, path)
-
+            append_file_to_group(groups, path)
     return groups
 
 
