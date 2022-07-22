@@ -1,0 +1,12 @@
+Source: ros-foxy-ament-cmake-lint-cmake
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-foxy-ament-cmake-core, ros-foxy-ament-cmake-test, ros-foxy-ament-lint-cmake, ros-foxy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-foxy-ament-cmake-lint-cmake
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-foxy-ament-cmake-test, ros-foxy-ament-lint-cmake, ros-foxy-ros-workspace
+Description: The CMake API for ament_lint_cmake to lint CMake code using cmakelint.
