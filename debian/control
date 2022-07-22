@@ -1,0 +1,12 @@
+Source: ros-foxy-ament-cmake-uncrustify
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-foxy-ament-cmake-copyright, ros-foxy-ament-cmake-core, ros-foxy-ament-cmake-lint-cmake, ros-foxy-ament-cmake-test, ros-foxy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-foxy-ament-cmake-uncrustify
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-foxy-ament-cmake-test, ros-foxy-ament-uncrustify, ros-foxy-ros-workspace
+Description: The CMake API for ament_uncrustify to check code against styleconventions using uncrustify.
