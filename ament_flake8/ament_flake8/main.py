@@ -15,7 +15,6 @@
 # limitations under the License.
 
 import argparse
-from distutils.version import LooseVersion
 import os
 import sys
 import time
@@ -23,9 +22,9 @@ from xml.sax.saxutils import escape
 from xml.sax.saxutils import quoteattr
 
 import flake8
-if LooseVersion(flake8.__version__) >= '3.0':
-    from flake8.main import application as flake8_app
-    from flake8.api.legacy import StyleGuide
+from flake8.api.legacy import StyleGuide
+from flake8.main import application as flake8_app
+from flake8.main import options as flake8_options
 
 
 def main(argv=sys.argv[1:]):
@@ -82,6 +81,9 @@ def main_with_errors(argv=sys.argv[1:]):
         if 'AMENT_IGNORE' in dirnames + filenames:
             dirnames[:] = []
             args.excludes.append(dirpath)
+        else:
+            # ignore folder starting with . or _
+            args.excludes.extend(d for d in dirnames if d[0] in ['.', '_'])
 
     report = generate_flake8_report(
         args.config_file, args.paths, args.excludes,
@@ -172,10 +174,38 @@ def get_flake8_style_guide(argv):
     return StyleGuide(application)
 
 
+def parse_config_file(config_file):
+    from flake8.options import config, manager, aggregator
+
+    try:
+        # Support 4.0.0
+        opts_manager = manager.OptionManager(prog='flake8', version='4.0.0')
+        flake8_options.register_default_options(opts_manager)
+
+        return aggregator.aggregate_options(
+            opts_manager,
+            config.ConfigFileFinder('flake8', [], config_file),
+            []
+        )
+    except TypeError:
+        opts_manager = manager.OptionManager(prog='flake8', version='3.0.0')
+        flake8_options.register_default_options(opts_manager)
+
+        return aggregator.aggregate_options(
+            opts_manager,
+            config.ConfigFileFinder('flake8', [], [config_file]),
+            []
+        )
+
+
 def generate_flake8_report(config_file, paths, excludes, max_line_length=None):
-    if LooseVersion(flake8.__version__) < '3.0':
-        from ament_flake8.legacy import generate_flake8_report
-        return generate_flake8_report(config_file, paths, excludes, max_line_length)
+    opts, _ = parse_config_file(config_file)
+
+    # Ignore flake8 defaults here
+    if opts.exclude != list(flake8_options.defaults.EXCLUDE):
+        # Explicitly append to exclude args to prevent config excludes
+        # from being overwritten
+        excludes.extend(opts.exclude)
 
     flake8_argv = []
     if config_file is not None:

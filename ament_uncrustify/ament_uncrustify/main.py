@@ -19,6 +19,7 @@ from collections import defaultdict
 from configparser import ConfigParser
 import difflib
 import filecmp
+import glob
 import os
 import re
 import shutil
@@ -60,12 +61,13 @@ def main(argv=sys.argv[1:]):
                  "'.%s'" % e for e in sorted(c_extensions + cpp_extensions)]))
     parser.add_argument(
         '--exclude',
+        metavar='filename',
         nargs='*',
         default=[],
-        help='Exclude specific file names and directory names from the check')
+        help='Exclude specific file names from the check.')
     parser.add_argument(
         '--language',
-        choices=['C', 'C++'],
+        choices=['C', 'C++', 'CPP'],
         help="Passed to uncrustify as '-l <language>' to force a specific "
              'language rather then choosing one based on file extension')
     parser.add_argument(
@@ -104,9 +106,15 @@ def main(argv=sys.argv[1:]):
         if args.xunit_file:
             start_time = time.time()
 
+        # replace language set to 'C++' with 'CPP' to be more consistent with uncrustify
+        if args.language == 'C++':
+            language_ = 'CPP'
+        else:
+            language_ = args.language
+
         files_by_language = get_files(
-            args.paths, {'C': c_extensions, 'C++': cpp_extensions},
-            excludes=args.exclude, language=args.language)
+            args.paths, {'C': c_extensions, 'CPP': cpp_extensions},
+            exclude_patterns=args.exclude, language=language_)
         if not files_by_language:
             print('No files found', file=sys.stderr)
             return 1
@@ -209,12 +217,18 @@ def find_executable(file_name, additional_paths=None):
     return shutil.which(file_name, path=path)
 
 
-def get_files(paths, extension_types, excludes=[], language=None):
+def get_files(paths, extension_types, exclude_patterns=[], language=None):
+    excludes = []
+    for exclude_pattern in exclude_patterns:
+        excludes.extend(glob.glob(exclude_pattern))
+    excludes = {os.path.realpath(x) for x in excludes}
+
     extensions_with_dot_to_language = {
         f'.{extension}': language or ext_language
         for ext_language, extensions in extension_types.items()
         for extension in extensions
     }
+
     files = defaultdict(list)
     for path in paths:
         if os.path.isdir(path):
@@ -224,23 +238,23 @@ def get_files(paths, extension_types, excludes=[], language=None):
                     continue
                 # ignore folder starting with . or _
                 dirnames[:] = [d for d in dirnames if d[0] not in ['.', '_']]
-                # ignore excluded folders
-                dirnames[:] = [d for d in dirnames if d not in excludes]
                 dirnames.sort()
 
                 # select files by extension
                 for filename in sorted(filenames):
-                    if filename in excludes:
-                        continue
                     _, ext = os.path.splitext(filename)
                     language = extensions_with_dot_to_language.get(ext, None)
                     if language is not None:
-                        files[language].append(
-                            os.path.normpath(os.path.join(dirpath, filename)))
+                        filepath = os.path.join(dirpath, filename)
+                        if os.path.realpath(filepath) not in excludes:
+                            files[language].append(
+                                os.path.normpath(os.path.join(dirpath, filename)))
         if os.path.isfile(path):
             _, ext = os.path.splitext(path)
             language = extensions_with_dot_to_language.get(ext, None)
-            files[language].append(os.path.normpath(path))
+            if language is not None:
+                if os.path.realpath(path) not in excludes:
+                    files[language].append(os.path.normpath(path))
     return files
 
 
@@ -278,7 +292,7 @@ def invoke_uncrustify(
         if e.output:
             print(e.output.decode(), file=sys.stderr)
         print("The invocation of 'uncrustify' failed with error code %d: %s" %
-            (e.returncode, e), file=sys.stderr)
+              (e.returncode, e), file=sys.stderr)
         return None
 
     if cwd:
@@ -292,8 +306,7 @@ def invoke_uncrustify(
         output_files = [
             os.path.join(
                 temp_path,
-                os.sep.join(f.split(os.sep)[1:]) +
-                suffix
+                os.sep.join(f.split(os.sep)[1:]) + suffix
             ) for f in input_files
         ]
 
