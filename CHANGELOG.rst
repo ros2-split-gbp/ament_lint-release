@@ -2,6 +2,11 @@
 Changelog for package ament_cmake_pclint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.13.2 (2022-09-13)
+-------------------
+* Update maintainers (`#379 <https://github.com/ament/ament_lint/issues/379>`_)
+* Contributors: methylDragon
+
 0.13.1 (2022-05-09)
 -------------------
 
