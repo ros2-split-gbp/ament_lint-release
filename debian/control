@@ -1,0 +1,12 @@
+Source: ros-rolling-ament-cmake-pyflakes
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-rolling-ament-cmake-copyright <!nocheck>, ros-rolling-ament-cmake-core, ros-rolling-ament-cmake-lint-cmake <!nocheck>, ros-rolling-ament-cmake-test, ros-rolling-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-ament-cmake-pyflakes
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-rolling-ament-cmake-test, ros-rolling-ament-pyflakes, ros-rolling-ros-workspace
+Description: The CMake API for ament_pyflakes to check code using pyflakes.
