@@ -2,16 +2,10 @@
 Changelog for package ament_lint_auto
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.13.2 (2022-09-13)
--------------------
-* [ament_lint_auto] General file exclusion with AMENT_LINT_AUTO_FILE_EXCLUDE (`#386 <https://github.com/ament/ament_lint/issues/386>`_)
-* Update maintainers (`#379 <https://github.com/ament/ament_lint/issues/379>`_)
-* Contributors: Abrar Rahman Protyasha, methylDragon
-
-0.13.1 (2022-05-09)
+0.12.5 (2023-01-12)
 -------------------
 
-0.13.0 (2022-04-29)
+0.12.4 (2022-05-09)
 -------------------
 
 0.12.3 (2022-04-08)

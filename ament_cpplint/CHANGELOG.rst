@@ -2,19 +2,13 @@
 Changelog for package ament_cpplint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.13.2 (2022-09-13)
+0.12.5 (2023-01-12)
 -------------------
-* [ament_cpplint] Process errors without linenums (`#385 <https://github.com/ament/ament_lint/issues/385>`_)
-* Update maintainers (`#379 <https://github.com/ament/ament_lint/issues/379>`_)
-* Contributors: Abrar Rahman Protyasha, methylDragon
 
-0.13.1 (2022-05-09)
+0.12.4 (2022-05-09)
 -------------------
-* Consider files with '.hh' extension as C++ headers (`#374 <https://github.com/ament/ament_lint/issues/374>`_)
+* Consider files with '.hh' extension as C++ headers (`#374 <https://github.com/ament/ament_lint/issues/374>`_) (`#381 <https://github.com/ament/ament_lint/issues/381>`_)
 * Contributors: Jacob Perron
-
-0.13.0 (2022-04-29)
--------------------
 
 0.12.3 (2022-04-08)
 -------------------
