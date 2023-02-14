@@ -1,0 +1,12 @@
+Source: ros-rolling-ament-clang-format
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest <!nocheck>, ros-rolling-ament-copyright <!nocheck>, ros-rolling-ament-flake8 <!nocheck>, ros-rolling-ament-pep257 <!nocheck>, ros-rolling-ros-workspace, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-ament-clang-format
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, clang-format, python3-yaml, ros-rolling-ros-workspace
+Description: The ability to check code against style conventions using clang-format and generate xUnit test result files.
