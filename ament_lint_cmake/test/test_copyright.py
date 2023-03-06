@@ -19,6 +19,6 @@ import pytest
 @pytest.mark.copyright
 @pytest.mark.linter
 def test_copyright():
-    excluded = ['ament_lint_cmake/cmakelint.py']
+    excluded = ['cmakelint.py']
     rc = main(argv=['--exclude'] + excluded)
     assert rc == 0, 'Found errors'

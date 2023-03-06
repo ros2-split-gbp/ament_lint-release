@@ -5,7 +5,7 @@ package_name = 'ament_xmllint'
 
 setup(
     name=package_name,
-    version='0.14.0',
+    version='0.9.8',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
@@ -16,8 +16,8 @@ setup(
     zip_safe=True,
     author='Dirk Thomas',
     author_email='dthomas@osrfoundation.org',
-    maintainer='Michael Jeronimo',
-    maintainer_email='michael.jeronimo@openrobotics.org',
+    maintainer='Dirk Thomas',
+    maintainer_email='dthomas@osrfoundation.org',
     url='https://github.com/ament/ament_lint',
     download_url='https://github.com/ament/ament_lint/releases',
     keywords=['ROS'],

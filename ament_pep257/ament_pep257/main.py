@@ -15,6 +15,7 @@
 # limitations under the License.
 
 import argparse
+from distutils.version import LooseVersion
 import logging
 import os
 import sys
@@ -37,65 +38,23 @@ except ImportError:  # try version 1.0.0
 log.setLevel(logging.INFO)
 
 
-_conventions = set(pydocstyle.conventions.keys())
-_conventions.add('ament')
-
-_ament_ignore = [
-    'D100',
-    'D101',
-    'D102',
-    'D103',
-    'D104',
-    'D105',
-    'D106',
-    'D107',
-    'D203',
-    'D212',
-    'D404',
-]
-
-
 def main(argv=sys.argv[1:]):
     parser = argparse.ArgumentParser(
         description='Check docstrings against the style conventions in PEP 257.',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    err_code_group = parser.add_mutually_exclusive_group()
-    err_code_group.add_argument(
+    parser.add_argument(
         '--ignore',
-        nargs='+',
-        default=[],
-        help='Choose the list of error codes for pydocstyle NOT to check for.')
-    err_code_group.add_argument(
-        '--select',
-        nargs='+',
-        default=[],
-        help='Choose the basic list of error codes for pydocstyle to check for.'
-    )
-    err_code_group.add_argument(
-        '--convention',
-        choices=_conventions,
-        default='ament',
-        help=(
-            f'Choose a preset list of error codes. Valid options are {_conventions}.'
-            f'The "ament" convention is defined as --ignore {_ament_ignore}.'
-        ),
-    )
-    parser.add_argument(
-        '--add-ignore',
-        nargs='+',
-        default=[],
-        help='Ignore an extra error code, removing it from the list set by --(select/ignore)')
-    parser.add_argument(
-        '--add-select',
-        nargs='+',
-        default=[],
-        help='Check an extra error code, adding it to the list set by --(select/ignore).'
-    )
+        nargs='*',
+        default=[
+            'D100', 'D101', 'D102', 'D103', 'D104', 'D105', 'D106', 'D107',
+            'D203', 'D212', 'D404',
+        ],
+        help='The pep257 categories to ignore')
     parser.add_argument(
         'paths',
         nargs='*',
         default=[os.curdir],
-        help='The files or directories to check. For directories, files ending '
+        help='The files or directories to check. For directories files ending '
              "in '.py' will be considered.")
     parser.add_argument(
         '--exclude',
@@ -114,16 +73,8 @@ def main(argv=sys.argv[1:]):
     if args.xunit_file:
         start_time = time.time()
 
-    args.ignore = ','.join(args.ignore)
-    args.select = ','.join(args.select)
-    args.add_select = ','.join(args.add_select)
-    args.add_ignore = ','.join(args.add_ignore)
-    if not (args.ignore or args.select) and args.convention == 'ament':
-        args.ignore = ','.join(_ament_ignore)
-
     excludes = [os.path.abspath(e) for e in args.excludes]
-    report = generate_pep257_report(args.paths, excludes, args.ignore, args.select,
-                                    args.convention, args.add_ignore, args.add_select)
+    report = generate_pep257_report(args.paths, excludes, args.ignore)
     error_count = sum(len(r[1]) for r in report)
 
     # print summary
@@ -161,24 +112,15 @@ def _filename_in_excludes(filename, excludes):
     return any(os.path.commonpath([absname, e]) == e for e in excludes)
 
 
-def generate_pep257_report(paths, excludes, ignore, select, convention, add_ignore, add_select):
+def generate_pep257_report(paths, excludes, ignore):
     conf = ConfigurationParser()
     sys_argv = sys.argv
     sys.argv = [
         'main',
+        '--ignore=' + ','.join(ignore),
         '--match', r'.*\.py',
         '--match-dir', r'[^\._].*',
     ]
-    if ignore:
-        sys.argv += ['--ignore', ignore]
-    elif select:
-        sys.argv += ['--select', select]
-    else:
-        sys.argv += ['--convention', convention]
-    if add_ignore:
-        sys.argv += ['--add-ignore', add_ignore]
-    if add_select:
-        sys.argv += ['--add-select', add_select]
     sys.argv += paths
     conf.parse()
     sys.argv = sys_argv
@@ -187,14 +129,22 @@ def generate_pep257_report(paths, excludes, ignore, select, convention, add_igno
     report = []
 
     files_dict = {}
-    # Unpack 3 values for pydocstyle <= 6.1.1 and 4 values for pydocstyle >= 6.2.0
-    for filename, checked_codes, ignore_decorators, *_ in files_to_check:
-        if _filename_in_excludes(filename, excludes):
-            continue
-        files_dict[filename] = {
-            'select': checked_codes,
-            'ignore_decorators': ignore_decorators,
-        }
+    if LooseVersion(pydocstyle.__version__) >= LooseVersion('2.0.0'):
+        # Unpack 3 values for pydocstyle <= 6.1.1 and 4 values for pydocstyle >= 6.2.0
+        for filename, checked_codes, ignore_decorators, *_ in files_to_check:
+            if _filename_in_excludes(filename, excludes):
+                continue
+            files_dict[filename] = {
+                'select': checked_codes,
+                'ignore_decorators': ignore_decorators,
+            }
+    else:
+        for filename, select in files_to_check:
+            if _filename_in_excludes(filename, excludes):
+                continue
+            files_dict[filename] = {
+                'select': select,
+            }
 
     for filename in sorted(files_dict.keys()):
         print('checking', filename)

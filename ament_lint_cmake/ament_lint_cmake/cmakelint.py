@@ -34,7 +34,7 @@ _RE_COMMAND_START_SPACES = re.compile(r'^\s*\w+\s*\((\s*)', re.VERBOSE)
 _RE_COMMAND_END_SPACES = re.compile(r'(\s*)\)', re.VERBOSE)
 _RE_LOGIC_CHECK = re.compile(r'(\w+)\s*\(\s*\S+[^)]+\)', re.VERBOSE)
 _RE_COMMAND_ARG = re.compile(r'(\w+)', re.VERBOSE)
-_RE_STRING = re.compile(r'^\s*\#?\s*"[^"]+"\)?', re.VERBOSE)
+_RE_STRING = re.compile(r'^\s*#?\s*"[^"]+"\)?', re.VERBOSE)
 _logic_commands = """
 else
 endforeach
@@ -84,7 +84,6 @@ class _CMakeLintState(object):
         self.config = 0
         self.errors = 0
         self.spaces = 2
-        self.linelength = 80
         self.allowed_categories = _ERROR_CATEGORIES.split()
 
     def SetFilters(self, filters):
@@ -110,9 +109,6 @@ class _CMakeLintState(object):
 
     def SetSpaces(self, spaces):
         self.spaces = int(spaces.strip())
-
-    def SetLineLength(self, linelength):
-        self.linelength = int(linelength)
 
 class _CMakePackageState(object):
     def __init__(self):
@@ -202,7 +198,7 @@ def CheckLineLength(filename, linenumber, clean_lines, errors):
     Check for lines longer than the recommended length
     """
     line = clean_lines.raw_lines[linenumber]
-    if len(line) > _lint_state.linelength:
+    if len(line) > 80:
         if _RE_STRING.match(line):
             lineno = linenumber
             while lineno > 0:
@@ -219,8 +215,7 @@ def CheckLineLength(filename, linenumber, clean_lines, errors):
                 filename,
                 linenumber,
                 'linelength',
-                'Lines should be <= %d characters long' %
-                    (_lint_state.linelength))
+                'Lines should be <= 80 characters long')
 
 def ContainsCommand(line):
     return _RE_COMMAND.match(line)
@@ -454,7 +449,6 @@ def PrintCategories():
 def ParseOptionFile(contents, ignore_space):
     filters = None
     spaces = None
-    linelength = None
     for line in contents:
         line = line.strip()
         if not line or line.startswith('#'):
@@ -463,13 +457,9 @@ def ParseOptionFile(contents, ignore_space):
             filters = line.replace('filter=', '')
         if line.startswith('spaces='):
             spaces = line.replace('spaces=', '')
-        if line.startswith('linelength='):
-            linelength = line.replace('linelength=', '')
     _lint_state.SetFilters(filters)
     if spaces and not ignore_space:
         _lint_state.SetSpaces(spaces)
-    if linelength is not None:
-        _lint_state.SetLineLength(linelength)
 
 def ParseArgs(argv):
     try:
