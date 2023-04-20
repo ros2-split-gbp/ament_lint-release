@@ -1,0 +1,12 @@
+Source: ros-iron-ament-lint-common
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-iron-ament-cmake-core, ros-iron-ament-cmake-export-dependencies, ros-iron-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-iron-ament-lint-common
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-iron-ament-cmake-copyright, ros-iron-ament-cmake-core, ros-iron-ament-cmake-cppcheck, ros-iron-ament-cmake-cpplint, ros-iron-ament-cmake-flake8, ros-iron-ament-cmake-lint-cmake, ros-iron-ament-cmake-pep257, ros-iron-ament-cmake-uncrustify, ros-iron-ament-cmake-xmllint, ros-iron-ros-workspace
+Description: The list of commonly used linters in the ament build system in CMake.
