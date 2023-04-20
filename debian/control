@@ -1,0 +1,12 @@
+Source: ros-iron-ament-cmake-cpplint
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-iron-ament-cmake-copyright <!nocheck>, ros-iron-ament-cmake-core, ros-iron-ament-cmake-lint-cmake <!nocheck>, ros-iron-ament-cmake-test, ros-iron-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-iron-ament-cmake-cpplint
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-iron-ament-cmake-test, ros-iron-ament-cpplint, ros-iron-ros-workspace
+Description: The CMake API for ament_cpplint to lint C / C++ code using cpplint.
