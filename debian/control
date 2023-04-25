@@ -1,0 +1,12 @@
+Source: ros-humble-ament-cmake-clang-tidy
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-core, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-test, ros-humble-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-ament-cmake-clang-tidy
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-clang-tidy, ros-humble-ament-cmake-test, ros-humble-ros-workspace
+Description: The CMake API for ament_clang_tidy to lint C / C++ code using clang tidy.
