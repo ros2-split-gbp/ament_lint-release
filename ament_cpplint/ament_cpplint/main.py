@@ -305,12 +305,11 @@ def get_xunit_content(report, testname, elapsed):
         if errors:
             # report each cpplint error as a failing testcase
             for error in errors:
-                linenum = str(error['linenum']) if error['linenum'] is not None else 'None'
                 data = {
                     'quoted_name': quoteattr(
-                        '%s [%s] (%s:%s)' % (
+                        '%s [%s] (%s:%d)' % (
                             error['category'], error['confidence'],
-                            filename, linenum)),
+                            filename, error['linenum'])),
                     'testname': testname,
                     'quoted_message': quoteattr(error['message']),
                 }
