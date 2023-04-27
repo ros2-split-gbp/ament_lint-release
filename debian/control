@@ -1,0 +1,12 @@
+Source: ros-rolling-ament-flake8
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-rolling-ros-workspace, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-ament-flake8
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, python3-flake8, ros-rolling-ament-lint, ros-rolling-ros-workspace
+Description: The ability to check code for style and syntax conventions with flake8.
