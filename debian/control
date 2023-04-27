@@ -1,0 +1,12 @@
+Source: ros-rolling-ament-lint
+Section: misc
+Priority: optional
+Maintainer: Michael Jeronimo <michael.jeronimo@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-rolling-ros-workspace, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-ament-lint
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-rolling-ros-workspace
+Description: Providing common API for ament linter packages.
