@@ -2,15 +2,29 @@
 Changelog for package ament_pep257
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.12.6 (2023-04-25)
+0.15.0 (2023-04-27)
 -------------------
 
-0.12.5 (2023-01-12)
+0.14.1 (2023-04-11)
 -------------------
-* Added undescore to ignore new pydocstyle item (backport `#428 <https://github.com/ament/ament_lint/issues/428>`_) (`#429 <https://github.com/ament/ament_lint/issues/429>`_)
-* Contributors: mergify[bot]
 
-0.12.4 (2022-05-09)
+0.14.0 (2023-02-14)
+-------------------
+* updating ref to pep257 docs (`#433 <https://github.com/ament/ament_lint/issues/433>`_)
+* Added underscore to ignore new pydocstyle item (`#428 <https://github.com/ament/ament_lint/issues/428>`_)
+* [rolling] Update maintainers - 2022-11-07 (`#421 <https://github.com/ament/ament_lint/issues/421>`_)
+* Contributors: Audrow Nash, Christian Henkel, Cristóbal Arroyo
+
+0.13.2 (2022-09-13)
+-------------------
+* [ament_pep257][master] redirecting error prints to stderr (`#390 <https://github.com/ament/ament_lint/issues/390>`_)
+* Update maintainers (`#379 <https://github.com/ament/ament_lint/issues/379>`_)
+* Contributors: Mirco Colosi (CR/AAS3), methylDragon
+
+0.13.1 (2022-05-09)
+-------------------
+
+0.13.0 (2022-04-29)
 -------------------
 
 0.12.3 (2022-04-08)

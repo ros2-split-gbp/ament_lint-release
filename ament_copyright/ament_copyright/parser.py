@@ -55,19 +55,24 @@ class FileDescriptor:
     def parse(self):
         raise NotImplementedError()
 
-    def identify_license(self, content, license_part):
+    def identify_license(self, content, license_part, licenses=None):
         if content is None:
             return
+        if licenses is None:
+            licenses = get_licenses()
+        formatted_content = remove_formatting(content)
 
-        for name, license_ in get_licenses().items():
+        for name, license_ in licenses.items():
             templates = getattr(license_, license_part)
             for template in templates:
-                formatted_template = remove_formatting(template)
                 last_index = -1
-                for license_section in formatted_template.split('{copyright_holder}'):
+                formatted_template = remove_formatting(template)
+                template_sections = split_template(formatted_template,
+                                                   ['{copyright_holder}', '{copyright}'])
+                for license_section in template_sections:
                     # OK, now look for each section of the license in the incoming
                     # content.
-                    index = remove_formatting(content).find(license_section.strip())
+                    index = formatted_content.find(license_section.strip())
                     if index == -1 or index <= last_index:
                         # Some part of the license is not in the content, or the license
                         # is rearranged, this license doesn't match.
@@ -110,11 +115,14 @@ class SourceDescriptor(FileDescriptor):
 
         # get first comment block without leading comment tokens
         block, _ = get_comment_block(self.content, index)
-        if not block:
-            return
         copyrights, remaining_block = search_copyright_information(block)
-        if not copyrights:
-            return None
+
+        if len(copyrights) == 0:
+            block = get_multiline_comment_block(self.content, index)
+            copyrights, remaining_block = search_copyright_information(block)
+
+        if len(copyrights) == 0:
+            return
 
         self.copyrights = copyrights
 
@@ -173,14 +181,16 @@ def determine_filetype(path):
 
 
 def search_copyright_information(content):
+    if content is None:
+        return [], content
     # regex for matching years or year ranges (yyyy-yyyy) separated by colons
     year = r'\d{4}'
     year_range = '%s-%s' % (year, year)
     year_or_year_range = '(?:%s|%s)' % (year, year_range)
     pattern = r'^[^\n\r]?\s*(?:\\copyright\s*)?' \
-              r'Copyright(?:\s+\(c\))?\s+(%s(?:,\s*%s)*),?\s+([^\n\r]+)$' % \
+              r'copyright(?:\s+\(c\))?\s+(%s(?:,\s*%s)*),?\s+([^\n\r]+)$' % \
         (year_or_year_range, year_or_year_range)
-    regex = re.compile(pattern, re.DOTALL | re.MULTILINE)
+    regex = re.compile(pattern, re.DOTALL | re.MULTILINE | re.IGNORECASE)
 
     copyrights = []
     while True:
@@ -274,6 +284,49 @@ def get_comment_block(content, index):
     return '\n'.join(lines), start_index + len(comment_token) + 1
 
 
+def get_multiline_comment_block(content, index):
+    patterns = [('^(/[*])', '([*]/)$'),
+                ('^(<!--)', '(-->)$')]
+    for pattern_pair in patterns:
+        start_pattern, end_pattern = pattern_pair
+        # find the first match of the comment start token
+        # also accept BOM if present
+        if index == 0 and content[0] == '\ufeff':
+            start_pattern = start_pattern[0] + '\ufeff' + start_pattern[1:]
+        start_regex = re.compile(start_pattern, re.MULTILINE)
+        start_match = start_regex.search(content, index)
+        if not start_match:
+            continue
+        start_index = start_match.start(1)
+
+        # find the first match of the comment end token
+        end_regex = re.compile(end_pattern, re.MULTILINE)
+        end_match = end_regex.search(content, index)
+        if not end_match:
+            continue
+        end_index = end_match.start(1)
+
+        # collect all lines between start and end (open interval) and strip out any common prefix
+        block = content[start_index:end_index]
+        block_lines = block.splitlines()
+        if len(block_lines) == 1:
+            prefixed_lines = block_lines
+        elif len(block_lines) == 2:
+            prefixed_lines = block_lines[1:]
+        else:
+            prefixed_lines = block_lines[1:-1]
+
+        if len(prefixed_lines) > 1:
+            line_prefix = os.path.commonprefix(prefixed_lines)
+            lines = [line[len(line_prefix):] for line in prefixed_lines]
+        else:
+            # Single-line header does not have a common prefix to strip out
+            lines = prefixed_lines
+
+        return '\n'.join(lines)
+    return None
+
+
 def scan_past_empty_lines(content, index):
     while is_empty_line(content, index):
         index = get_index_of_next_line(content, index)
@@ -286,3 +339,16 @@ def is_empty_line(content, index):
 
 def remove_formatting(text):
     return ' '.join(filter(None, text.split()))
+
+
+# Flat list of sections split on all separators provided
+def split_template(sections, separators):
+    if type(sections) != list:
+        return split_template([sections], separators)
+    elif len(separators) > 1:
+        return sum([split_template([section], separators[0:1]) for section
+                    in sum([split_template([section], separators[1:])
+                            for section in sections], [])], [])
+    else:
+        return list(filter(lambda s: len(s) > 0,
+                           sum([section.split(separators[0]) for section in sections], [])))
